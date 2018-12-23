@@ -1,0 +1,18 @@
+{
+  "name": "calc-example",
+  "version": "0.0.1",
+  "description": "Simple Calc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simplecalculatorjs": "^1.0.6"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "mocha": "^5.2.0"
+  }
+}
