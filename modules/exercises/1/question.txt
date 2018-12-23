@@ -1,0 +1,7 @@
+1. transform your code into a module
+2. export "read", "add" & "remove" functions
+3. require the module
+4. add a user
+5. log the user details
+6. remove the user
+7. log the user details
