@@ -1,0 +1,14 @@
+1. create an array of objects
+2. each object should contain the keys:
+	first name
+	last name
+	age
+	height
+	hairColor
+	isActive (true/false)
+	id
+3. add functions for:
+	adding a user
+	modifying a user property (first name, last name...) by id
+	read a user property by id
+	removing a user property by id
