@@ -1,0 +1,7 @@
+- create a node.js server
+- create a new user
+- display the following HTML page on http://localhost:8000
+	<h1>User First/Last Name</h1>
+	<h2>Age</h2>
+	<h3>Height</h3>
+- if user is active display a green message "Active", otherwise display a red message "Disconnected"
