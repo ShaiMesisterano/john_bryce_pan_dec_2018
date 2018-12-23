@@ -1,0 +1,3 @@
+1. create a function named "search" which accepts 2 parameters: "query" and "word"
+2. query google.com and check if the word exist in the HTML code
+3. if it does, display a page with status 200 and text "Found". Otherwise display a page with status 404 and text "Not Found"
