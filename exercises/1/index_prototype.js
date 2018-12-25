@@ -28,6 +28,10 @@ function User(firstName, lastName, age, height, hairColor, isActive, id) {
 //User.prototype.modify = function(prop, value) {
 //    this[prop] = value;
 //}
+Array.prototype.filter = function(arr){
+    var result = arr.filter(...);
+    return result;
+}
 
 var chatUser = new User("Shai", "Mesisterano", 33, 187, null, true, 1);
 //var chatUser = new User("Shai", "Mesisterano");

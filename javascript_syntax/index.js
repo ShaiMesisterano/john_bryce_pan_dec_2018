@@ -20,6 +20,21 @@ var watermelonObj = {
     weight: 10
 };
 var key = "color";
+function changeKey(obj) {
+    obj.weight = 999;
+}
+console.log("BEFORE", watermelonObj);
+changeKey(watermelonObj);
+console.log("AFTER", watermelonObj);
+
+function changeString(str) {
+    str = "blah blah"
+}
+
+console.log("BEFORE", key);
+changeString(key);
+console.log("AFTER", key);
+
 watermelonObj.isWithSeeds = true; // watermelonObj[key] = true;
 console.log(watermelonObj[key]);
 // Array
@@ -47,6 +62,6 @@ var foo = function(name) {
 foo("foo");
 // For-Loop
 var arr = ["Lemon", "Apple", "Orange"];
-for (var i=0;i<arr;i++){
+for (var i=0;i<arr.length;i++){
     console.log(arr[i]);
 }
