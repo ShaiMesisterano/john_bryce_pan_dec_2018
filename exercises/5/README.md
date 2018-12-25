@@ -18,6 +18,6 @@ var flagsArray = [
 </code>
 </li>
 <li>
-2. Implement CRUD methods using Express.js: Create (POST method) a new flag, update (PUT method) flag colors (by country), delete (DELETE method) a flag and read (GET method) a flag (by country)
+Implement CRUD methods using Express.js: Create (POST method) a new flag, update (PUT method) flag colors (by country), delete (DELETE method) a flag and read (GET method) a flag (by country)
 </li>
 </ol>
