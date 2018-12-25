@@ -19,6 +19,9 @@ var watermelonObj = {
     name: "watermelon",
     weight: 10
 };
+for (item in watermelonObj){
+    console.log(watermelonObj[item]);
+}
 var key = "color";
 function changeKey(obj) {
     obj.weight = 999;
