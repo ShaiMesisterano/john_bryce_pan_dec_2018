@@ -16,9 +16,17 @@ app.get('/primeMinisters/contains/:letter', function(request, response) {
             primeMinister.name.last.indexOf(letter) > -1;
     });
     var sorted = primeMinisters.sort(function(a,b){
-        console.log(a.name.first, b.name.first);
-        return a.name.first - b.name.first;
+        if (a.name.first > b.name.first) {
+            return 1;
+        }
+        else if (a.name.first < b.name.first) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
     });
+    console.log(JSON.stringify(sorted,null, 4));
     response.end(JSON.stringify(sorted,null, 4));
 });
 
