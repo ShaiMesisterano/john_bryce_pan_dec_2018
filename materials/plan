@@ -1,26 +1,3 @@
-day#3
-	FS + Middleware - save logs in CSV file
-	Convert FS to async/await
-	Advanced JS
-		var, let, const
-		call, apply, bind
-		arrow function
-		Deconstructing
-			Array
-			Object
-		spread operator
-	---
-FS Exercise:
-Convert request exercise to Async/await
-	---
-FS + Middleware Exercise:
-Open the Google search project.
-Save each search result page as an HTML file.
-Then for every search check if there is an existing HTML file.
-If there is - display it. Otherwise - display the result from the web.
-	----
-Ex#12
-----
 Jest tutorial
 ----
 Ex#13
@@ -29,7 +6,6 @@ Typescript tutorial
 -----
 Typescript+Jest Exercise
 Convert the scraping exercise to Typescript and write tests for it
------
 -----
 MySQL tutorial
 -----

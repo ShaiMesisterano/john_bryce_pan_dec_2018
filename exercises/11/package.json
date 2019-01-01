@@ -1,0 +1,21 @@
+{
+  "name": "11",
+  "version": "1.0.0",
+  "description": "<ul>     <li>         Use the Google search project (exercise #9)     </li>     <li>Save each search result page as an HTML file in the file system</li>     <li>Then for every search result check if there is an existing HTML file which contains this result</li>     <li>If there is an existing HTML file - display it. Otherwise - display the result from the web</li> </ul>",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsdom": "^13.1.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
