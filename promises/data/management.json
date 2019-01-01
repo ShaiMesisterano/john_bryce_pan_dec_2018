@@ -1,0 +1,17 @@
+[
+    {
+        "managerName": "John Doe",
+        "role": "CEO",
+        "age": "58"
+    },
+    {
+        "managerName": "Larra Doe",
+        "role": "CTO",
+        "age": "52"
+    },
+    {
+        "managerName": "Mark Doe",
+        "role": "COO",
+        "age": "42"
+    }
+]

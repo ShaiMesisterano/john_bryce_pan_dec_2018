@@ -1,0 +1,3 @@
+[ '[\n    {\n        "customerName": "Dan Carry"\n    },\n    {\n        "customerName": "Anny Marks"\n    },\n    {\n        "customerName": "Mark Jones"\n    }\n]',
+  '[\n    {\n        "managerName": "John Doe",\n        "role": "CEO",\n        "age": "58"\n    },\n    {\n        "managerName": "Larra Doe",\n        "role": "CTO",\n        "age": "52"\n    },\n    {\n        "managerName": "Mark Doe",\n        "role": "COO",\n        "age": "42"\n    }\n]',
+  '[\n    {\n        "publisherName": "ACME Publishers"\n    },\n    {\n        "publisherName": "JWR"\n    },\n    {\n        "publisherName": "POM"\n    }\n]' ]
