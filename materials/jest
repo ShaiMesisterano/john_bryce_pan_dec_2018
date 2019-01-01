@@ -1,0 +1,26 @@
+Jest
+	npm install --save-dev jest
+	npm "test" command
+	basic example
+		calc.test.js
+		failing test
+		passing test
+	matchers
+		https://github.com/sapegin/jest-cheat-sheet#matchers
+		.not
+	beforeAll/afterAll
+		calculator2.test.js
+	callback
+		calculator3.test.js
+	Promise
+		fs-promise.test.js (file content test)
+		.catch
+			return uppercase('').catch(e => {
+    			expect(e).toMatch('Empty string')
+  			});
+  	async/await
+  		fs-promise.test.js
+  	spy
+  		fs-promise.test.js
+  	mock
+  		fs-promise3.test.js

@@ -1,0 +1,42 @@
+mongoimport --db demo --collection tours
+
+use demo
+
+show collections
+
+db.tours.count()
+
+db.tours.find({"tourTags": "hikings"})
+
+db.tours.insert({ "tourName": "Tel Aviv central station", "tourLength": "Discover what's underneath the bus stations" "tourDescription": 1, "tourPrice": 150 "tourTags": ["Tel Aviv", "Underground"] } )
+
+db.tours.update({"tourName": "Tel Aviv central station"}, {$set: {"tourLength": 2}} )
+
+db.tours.remove({"tourName": "Tel Aviv central station"})
+
+db.tours.drop()
+
+mongoimport --db demo --collection tours
+
+db.tours.find().explain()
+
+db.tours.find({"tourPackage": "Taste of California"}).explain("executionStats")
+
+db.tours.createIndex({tourPackage:1})
+
+db.tours.find({"tourPackage": "Taste of California"}).explain("executionStats")
+
+db.tours.find( {"tourPrice": ($lte:500)} )
+
+db.tours.find({"tourPrice": {&lte: 500}}).explain("executionStats")
+
+db.tours.createIndex({tourPrice: 1, tourLength: 1})
+
+db.tours.find({"tourPrice": {$lte: 500}}).explain("executionStats")
+!!!!!!!!!!!
+db.tours.createIndex({"tourName": 1}, {unique: true})
+
+db.tours.remove()
+
+db.tours.find( {"tourPrice": ($lte:500)} ).sort({tourPrice: -1})
+

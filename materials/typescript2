@@ -1,0 +1,81 @@
+Typescript
+	background
+	// setup
+	sudo npm i typescript -g
+	create index.tsc
+		console.log("Works");
+		tsc index.tsc
+	sudo npm i ts-node -g
+	npm i --save-dev @types/body-parser @types/express @types/node @types/mongoose
+	create .tsconfig
+		compilerOptions
+			allowjs will compile also *.js
+		include
+	package.json
+		build: "tsc --w"
+		start: "tsc && ts-node ./index/dist/index.js"
+	// import a lib
+	import * as express from 'express';
+	// types
+	const num: number = 2;
+	let arr: number[] = [1,2,3,4];
+	const schema: any = {};
+	const schema: object = {};
+	const sayHello = (user: string): string => `hello ${user}`
+	export default class Messenger {
+		port: number;
+		constructor(port) {
+			this.port = port;
+		}
+		print(){
+			return `running on port ${this.port}`;
+		}
+	}
+	// import a custom module
+	import Messenger from './src/Messenger';
+	// ENUM
+	enums are CONSTANTS
+	export enum Settings {
+		username = "admin",
+		password = "pass"
+	}
+	import { Settings } from './src/Settings';
+	// Interface
+	interface - shape how the code will look like
+	interface IName {
+		firstName: string,
+		lastName: string
+	}
+	const nameCreator = (name: IName): string => `Hello ${firstName} ${lastName}` // we expect IName as the type
+	let myName = { firstName: "John", lastName: "Doe" };
+	console.log(nameCreator(myName));
+	// Generics
+	function nameCreator<T>(name: T): T {
+		return name;
+	} // "T" leave it for open type
+	let myName = nameCreator<string>("John");
+	myName = nameCreator<number>(42);
+	console.log(nameCreator(myName));
+	// namespace
+	namespace MessengerSpace {
+		export class // ...
+	}
+	// declaration merging
+	interface Warriors {
+		weapon: string,
+		skills: number
+	}
+	interface Warriors {
+		name: string
+	}
+	let ninja: Warriors = { weapon: "Gun", skills: 99, name: "John" };
+	// playground
+	https://www.typescriptlang.org/
+
+* Download exercise files
+
+----
+
+topics
+examples
+exercises

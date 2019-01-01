@@ -1,0 +1,19 @@
+create database cars
+
+use cars
+
+show databases
+
+show tables
+
+create table models(id int not null auto_increment, name varchar(20), origin varchar(20), year int, primary key (id));
+
+insert into models (name, origin, year) values ('Volvo', 'Sweden', 1996);
+
+select * from models;
+
+update models set origin="USA", year=1992 where id=1;
+
+delete from models where origin="USA";
+
+drop table models
