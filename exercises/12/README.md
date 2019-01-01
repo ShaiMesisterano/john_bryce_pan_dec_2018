@@ -1,13 +1,1 @@
-<p>צרו קובץ JSON המכיל מערך של חמישה ספרים.</p>
-<p>לכל ספר יש: </p>
-<ol>
-<li>קוד ספר (id)</li>
-<li>שם ספר</li>
-<li>סופר</li>
-<li>מחיר</li>
-<li>הנחה</li>
-</ol>
-<p>צרו ב-Express שרת המכיל שני Routes: </p>
-<p>/books המחזיר את כל מערך הספרים כ-JSON, בגלישת GET.</p>
-<p>/books/:id המחזיר את הספר בעל ה-id שהתקבל ל-Route, בגלישת GET.</p>
-<p>בידקו את שני ה-Routes ע"י גלישה מדפדפן.</p>
+Write Jest tests for the module "google-first-result" from exercise #11
