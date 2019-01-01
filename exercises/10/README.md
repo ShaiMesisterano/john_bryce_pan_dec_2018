@@ -1,1 +1,1 @@
-Convert	the following operations from callback mode to async/await mode: Read, Update, Delete
+Convert	the following operations from callback mode to async/await mode: Create, Update, Delete
