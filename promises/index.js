@@ -27,6 +27,7 @@ function print1() {
 }
 function print2() {
     return new Promise(function (resolve, reject) {
+        reject("Error");
         setTimeout(function () {
             resolve("2");
         }, 500);
@@ -46,6 +47,8 @@ print1().then(function(data1){
         console.log(data2);
         print3().then(function(data3){
             console.log(data3);
-        });
-    });
-})
+        }).catch(function(data){
+            console.log("Error: " + data);    
+        });;
+    })
+});

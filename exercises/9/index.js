@@ -9,7 +9,6 @@ app.get('/', async function(request, response){
     var search = request.query.search;
     var googleResult = await rp(`http://www.google.com/search?q=${search}`);
     var firstResult = getFirstResult(googleResult);
-    console.log(firstResult);
     var content = await rp(`http://www.google.com/${firstResult}`);
     response.end(content);
 });

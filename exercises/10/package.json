@@ -1,0 +1,16 @@
+{
+  "name": "10",
+  "version": "1.0.0",
+  "description": "Convert\tthe following operations from callback mode to async/await mode: Read, Update, Delete",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
