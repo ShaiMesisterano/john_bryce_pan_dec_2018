@@ -3,7 +3,7 @@ const mysql = require('promise-mysql');
 (async function(){
     const conn = await mysql.createConnection({
         host: 'localhost',
-        user: 'root',
+        user: 'shai',
         password: '12345678',
         database: 'recipes'
     });
