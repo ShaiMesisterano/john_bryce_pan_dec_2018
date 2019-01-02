@@ -1,0 +1,1477 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="no-js">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  <title>&lt;input type=&#34;radio&#34;&gt; | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+
+  
+<link rel="preload" href="https://developer.mozilla.org/static/fonts/locales/ZillaSlab-Regular.subset.bbc33fb47cf6.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="home" href="/en-US/">
+    <link rel="license" href="#license">
+  
+
+  
+    
+    
+
+    <link href="https://developer.mozilla.org/static/build/styles/mdn.c89321bb4ae7.css" rel="stylesheet" type="text/css" />
+
+    
+  
+
+    <link href="https://developer.mozilla.org/static/build/styles/wiki.973cb9ac57b0.css" rel="stylesheet" type="text/css" />
+
+
+    
+
+  <link href="https://developer.mozilla.org/static/build/styles/locale-en-US.520ecdcaef8c.css" rel="stylesheet" type="text/css" />
+
+  
+    <script>
+    // Mozilla DNT Helper
+    /* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/. */ if(typeof Mozilla==='undefined'){var Mozilla={}}Mozilla.dntEnabled=function(dnt,ua){'use strict';var dntStatus=dnt||navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack;var userAgent=ua||navigator.userAgent;var anomalousWinVersions=['Windows NT 6.1','Windows NT 6.2','Windows NT 6.3'];var fxMatch=userAgent.match(/Firefox\/(\d+)/);var ieRegEx=/MSIE|Trident/i;var isIE=ieRegEx.test(userAgent);var platform=userAgent.match(/Windows.+?(?=;)/g);if(isIE&&typeof Array.prototype.indexOf!=='function'){return false}else if(fxMatch&&parseInt(fxMatch[1],10)<32){dntStatus='Unspecified'}else if(isIE&&platform&&anomalousWinVersions.indexOf(platform.toString())!==-1){dntStatus='Unspecified'}else{dntStatus={'0':'Disabled','1':'Enabled'}[dntStatus]||'Unspecified'}return dntStatus==='Enabled'?true:false};
+    // only load GA if DNT is not enabled
+    if (Mozilla && !Mozilla.dntEnabled()) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-36116321-5', 'mozilla.org');
+        ga('set', 'anonymizeIp', true);
+
+        
+
+        // dimension9 == "Section editing"
+        
+            // dimension12 == 'Page Revision'
+            ga('set', 'dimension12', '1445457');
+            // dimension17 == 'English Slug'
+            ga('set', 'dimension17', 'Web/HTML/Element/input/radio');
+
+        (function() {
+            // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+            var win = window;
+            var removeUtms = function(){
+                var location = win.location;
+                if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                    win.history.replaceState({}, '', location.pathname);
+                }
+            };
+
+            ga('send', 'pageview', {'hitCallback': removeUtms});
+        })();
+    }
+</script>
+  
+
+  
+    <script>
+    // util for setting performance marks and mesaures
+    var mdn=window.mdn||{};mdn.perf={getDuration:function(e){"use strict";if(void 0!==performance.getEntriesByName)return performance.getEntriesByName(e)[0].duration;console.error("performance.getEntriesByName is not supported by your user-agent")},setMark:function(e){"use strict";if(void 0!==performance.mark)try{performance.mark(e)}catch(e){console.error("Error while setting performance mark: ",e)}else console.error("performance.mark is not supported by your user-agent")},setMeasure:function(e){"use strict";void 0!==performance.measure?performance.measure(e.measureName,e.startMark,e.endMark):console.error("performance.measure is not supported by your user-agent")}};
+    /* util specifically for postMessages sent from the
+       `head` of the interactive examples iframe */
+    function handlePerfMarks(e){e.measureName?(window.mdn.perf.setMark(e.markName),window.mdn.perf.setMeasure({measureName:e.measureName,startMark:e.startMark,endMark:e.endMark}),ga&&ga.create&&ga("send",{hitType:"timing",timingCategory:"RUM - Interactive Examples",timingVar:e.measureName,timingValue:window.mdn.perf.getDuration(e.measureName)||0})):window.mdn.perf.setMark(e.markName)}function perfMsgHandler(e){"use strict";var a=window.mdn.interactiveEditor.editorUrl||"https://interactive-examples.mdn.mozilla.net",r=e.data;if(e.origin!==a)return!1;r.markName&&-1<r.markName.indexOf("interactive-editor-")&&handlePerfMarks(r)}window.addEventListener("message",perfMsgHandler,!1);
+</script>
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta property="og:site_name" content="MDN Web Docs">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="MDN Web Docs">
+    
+  
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.mozilla.org/static/img/favicon114.d526f38b09c5.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.mozilla.org/static/img/favicon72.cc65d1d762a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.mozilla.org/static/img/favicon57.de33179910ae.png">
+  <!-- basic favicon -->
+  <link rel="shortcut icon" href="https://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.mozilla.org/static/build/js/html5shiv.ae1ac46eaf58.js" charset="utf-8"></script>
+  <![endif]-->
+
+  
+  <link rel="dns-prefetch" href="https://interactive-examples.mdn.mozilla.net" pr="0.75" />
+  <link rel="preconnect" href="https://interactive-examples.mdn.mozilla.net" pr="0.75" />
+
+  <link rel="alternate" type="application/json" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio" >
+
+  
+  <link rel="alternate" hreflang="en-US" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio" title="&lt;input type=&#34;radio&#34;&gt;">
+  
+    
+      <link rel="alternate" hreflang="fr" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/radio" title="&lt;input type=&#34;radio&#34;&gt;">
+    
+      <link rel="alternate" hreflang="ja" href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/Input/radio" title="&lt;input type=&#34;radio&#34;&gt;">
+    
+      <link rel="alternate" hreflang="ru" href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input/radio" title="&lt;input type=&#34;radio&#34;&gt;">
+    
+      <link rel="alternate" hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/radio" title="&lt;input type=&#34;radio&#34;&gt;">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="&lt;input type=&#34;radio&#34;&gt;">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio">
+  <meta name="twitter:title" content="&lt;input type=&#34;radio&#34;&gt;">
+  
+  <meta property="og:description" content="input elements of type radio are generally used in radio groups—collections of radio buttons describing a set of related options.">
+  <meta name="description" content="input elements of type radio are generally used in radio groups—collections of radio buttons describing a set of related options.">
+  <meta name="twitter:description" content="input elements of type radio are generally used in radio groups—collections of radio buttons describing a set of related options.">
+  
+
+</head>
+<body data-slug="Web/HTML/Element/input/radio" contextmenu="edit-history-menu" data-search-url="" class="document">
+
+  <script>
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        (function(){
+  var FLAGS = {
+    'kumaediting': false,'page_move': false,'section_edit': false,'spam_checks_enabled': true,'spam_submissions_enabled': false,'spam_admin_override': false,'spam_spammer_override': false,'spam_testing_mode': false,'sg_task_completion': false,'contrib_beta': false,'recurring_payment_beta': true
+    },
+    SWITCHES = {
+    'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'foundation_callout': false,'helpful-survey-2': true,'wiki_spam_training': true,'registration_disabled': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.siteUrl = '';
+        win.mdn.staticPath = 'https://developer.mozilla.org/static/';
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.mozilla.org/static/build/styles/editor-content.fb3ac67bc6c4.css','https://developer.mozilla.org/static/build/styles/editor-locale-en-US.520ecdcaef8c.css',
+                ],
+
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/styles/wiki-compat-tables.5f0189653d77.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.mozilla.org/static/build/js/syntax-prism.c3ad62e11c30.js',],
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/js/wiki-compat-tables.3a4ab2cc8ca1.js',],
+                'wiki-compat-table-survey': ['https://developer.mozilla.org/static/build/js/wiki-compat-table-survey.757217c07ae6.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+        win.mdn.contributions = {
+            enabled: true,
+            popup: false
+        };
+
+        
+
+        // interactive editor config
+        win.mdn.interactiveEditor = {
+            siteUrl: "https://developer.mozilla.org",
+            editorUrl: "https://interactive-examples.mdn.mozilla.net"
+        };
+        win.mdn.langCookieName = "django_language";
+
+    })(this);
+</script>
+    
+    <ul id="nav-access">
+  <li><a href="#content" id="skip-main">Skip to main content</a></li>
+  <li><a id="skip-language" href="#language">Select language</a></li>
+  <li><a href="#q" id="skip-search">Skip to search</a></li>
+</ul>
+
+    <!-- Header -->
+    <header id="main-header" class="header-main">
+      <a href="/en-US/" class="logo">MDN Web Docs</a>
+      <div class="nav-toolbox-wrapper">
+        <nav id="main-nav" class="nav-main" role="navigation">
+    <ul>
+        <li class="nav-main-item">
+            <a href="/en-US/docs/Web">Technologies
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-tech-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+                    <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+                    <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+                    <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+                    <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+                    <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+                    <li><a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">Browser Extensions</a></li>
+                    <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="/en-US/docs/Learn">References & Guides
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-learn-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="/en-US/docs/Learn">Learn web development</a></li>
+                    <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+                    <li><a href="/en-US/docs/Web/Reference">References</a></li>
+                    <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+                    <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+                    <li><a href="/en-US/docs/Games">Game development</a></li>
+                    <li><a href="/en-US/docs/Web">...more docs</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="/en-US/docs/MDN/Feedback">Feedback
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-contact-submenu">
+              <div class="submenu-column">
+                <ul>
+                  <li>
+                      <a href="https://support.mozilla.org/">Get Firefox help
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://stackoverflow.com/">Get web development help
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                      <a href="/en-US/docs/MDN/Community">Join the MDN community</a>
+                  </li>
+                  <li>
+                      <a target="_blank" rel="noopener" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio">Report a content problem
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a target="_blank" rel="noopener" href="https://bugzilla.mozilla.org/form.mdn">Report a bug
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+      </li>
+  </ul>
+</nav>
+        <div id="toolbox" class="toolbox">
+  <ul>
+    
+    <li class="nav-login"><div class="login">
+    
+        
+        <a href="/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FHTML%2FElement%2Finput%2Fradio" class="login-link js-login-link" data-service="GitHub" rel="nofollow">
+            Sign in<svg class="icon icon-github" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-label="GitHub" role="img" focusable="false">
+    <title>Github</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"/>
+</svg>
+        </a>
+    
+</div></li>
+  </ul>
+</div>
+      </div>
+      <form id="nav-main-search" action="/en-US/search" method="get" role="search" class="nav-main-search">
+  <div class="search-wrap">
+    <label for="main-q" class="offscreen">Search</label>
+    <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" aria-hidden="true" />
+    <span class="search-trigger">
+        <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28" aria-hidden="true">
+    <path d="M18 13c0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7 7-3.141 7-7zm8 13c0 1.094-.906 2-2 2a1.96 1.96 0 0 1-1.406-.594l-5.359-5.344a10.971 10.971 0 0 1-6.234 1.937c-6.078 0-11-4.922-11-11s4.922-11 11-11 11 4.922 11 11c0 2.219-.672 4.406-1.937 6.234l5.359 5.359c.359.359.578.875.578 1.406z"/>
+</svg>
+    </span>
+    <button type="submit" class="offscreen">Search</button>
+    <button type="button" id="close-header-search" class="close-header-search transparent">
+        <span class="offscreen">Close search</span>
+        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true"><path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"/></svg>
+    </button>
+  </div>
+</form>
+    </header> 
+
+  <!-- Content will go here -->
+  <main id="content">
+      
+  <!-- heading -->
+  <div id="wiki-document-head" class="document-head">
+    <div class="center">
+      <div class="document-title">
+        <h1>&lt;input type=&#34;radio&#34;&gt;</h1>
+      </div>
+
+      <!-- action buttons -->
+      <div class="document-actions">
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons">
+      <li>
+          <button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false">
+              <svg class="icon icon-language" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M10.219 16.844c-.031.109-.797-.25-1-.328-.203-.094-1.125-.609-1.359-.766s-1.125-.891-1.234-.938a28.275 28.275 0 0 1-2.094 2.828c-.281.328-1.125 1.391-1.641 1.719-.078.047-.531.094-.594.063.25-.187.969-1.078 1.281-1.437.391-.453 2.25-3.047 2.562-3.641.328-.594 1.312-2.562 1.359-2.75-.156-.016-1.391.406-1.719.516-.313.094-1.172.297-1.234.344-.063.063-.016.25-.047.313s-.313.203-.484.234a1.647 1.647 0 0 1-.734 0c-.203-.047-.391-.25-.438-.328 0 0-.063-.094-.078-.359.187-.063.5-.078.844-.172s1.188-.344 1.641-.5 1.328-.484 1.594-.547c.281-.047.984-.516 1.359-.641s.641-.281.656-.203 0 .422-.016.516c-.016.078-.766 1.547-.875 1.781-.063.125-.5.953-1.203 2.047.25.109.781.328 1 .438.266.125 2.125.906 2.219.938s.266.75.234.875zM7.016 9.25c.047.266-.031.375-.063.438-.156.297-.547.5-.781.594s-.625.187-.938.187c-.141-.016-.422-.063-.766-.406-.187-.203-.328-.75-.266-.688s.516.125.719.078.688-.187.906-.25c.234-.078.703-.203.859-.219.156 0 .281.063.328.266zm10.906 2.016l.984 3.547-2.172-.656zM.609 23.766l10.844-3.625V4.016L.609 7.657v16.109zM20 18.813l1.594.484-2.828-10.266-1.563-.484-3.375 8.375 1.594.484.703-1.719 3.297 1.016zM12.141 3.781l8.953 2.875V.718zM17 24.453l2.469.203-.844 2.5L18 26.125c-1.266.812-2.828 1.437-4.312 1.687-.453.094-.969.187-1.422.187h-1.313c-1.656 0-4.672-.984-5.984-1.937-.094-.078-.125-.141-.125-.25 0-.172.125-.297.281-.297.141 0 .875.453 1.078.547 1.406.703 3.375 1.344 4.953 1.344 1.953 0 3.281-.25 5.063-1.016.516-.234.969-.531 1.453-.797zm7-16.859v16.859c-12.078-3.844-12.094-3.844-12.094-3.844C11.656 20.718.453 24.5.297 24.5a.3.3 0 0 1-.281-.203c0-.016-.016-.031-.016-.047V7.406c.016-.047.031-.125.063-.156.094-.109.219-.141.313-.172.047-.016 1-.328 2.328-.781v-6l8.719 3.094C11.532 3.36 21.251 0 21.392 0c.172 0 .313.125.313.328v6.531z"/>
+</svg>
+              <span>Languages</span>
+          </button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li lang="fr"><bdi><a rel="internal" href="/fr/docs/Web/HTML/Element/Input/radio" data-locale="fr" title="French">Français (fr)</a></bdi></li>
+                
+                  <li lang="ja"><bdi><a rel="internal" href="/ja/docs/Web/HTML/Element/Input/radio" data-locale="ja" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li lang="ru"><bdi><a rel="internal" href="/ru/docs/Web/HTML/Element/Input/radio" data-locale="ru" title="Russian">Русский (ru)</a></bdi></li>
+                
+                  <li lang="zh-CN"><bdi><a rel="internal" href="/zh-CN/docs/Web/HTML/Element/Input/radio" data-locale="zh-CN" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Web/HTML/Element/input/radio$locales" rel="nofollow" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page-buttons-edit">
+          <a href="/en-US/docs/Web/HTML/Element/input/radio$edit" class="button neutral" id="edit-button" rel="nofollow">
+              <svg class="icon icon-pencil" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M5.672 24l1.422-1.422-3.672-3.672L2 20.328V22h2v2h1.672zm8.172-14.5a.329.329 0 0 0-.344-.344.368.368 0 0 0-.266.109l-8.469 8.469a.366.366 0 0 0-.109.266c0 .203.141.344.344.344a.368.368 0 0 0 .266-.109l8.469-8.469a.366.366 0 0 0 .109-.266zM13 6.5l6.5 6.5-13 13H0v-6.5zM23.672 8c0 .531-.219 1.047-.578 1.406L20.5 12 14 5.5l2.594-2.578c.359-.375.875-.594 1.406-.594s1.047.219 1.422.594l3.672 3.656c.359.375.578.891.578 1.422z"/>
+</svg>
+              Edit
+          </a>
+      </li>
+      
+
+        
+
+        <li class="page-buttons-advanced">
+            <button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false">
+                <svg class="icon icon-gear" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm8-1.703v3.469c0 .234-.187.516-.438.562l-2.891.438a8.86 8.86 0 0 1-.609 1.422c.531.766 1.094 1.453 1.672 2.156.094.109.156.25.156.391s-.047.25-.141.359c-.375.5-2.484 2.797-3.016 2.797a.795.795 0 0 1-.406-.141l-2.156-1.687a9.449 9.449 0 0 1-1.422.594c-.109.953-.203 1.969-.453 2.906a.573.573 0 0 1-.562.438h-3.469c-.281 0-.531-.203-.562-.469l-.438-2.875a9.194 9.194 0 0 1-1.406-.578l-2.203 1.672c-.109.094-.25.141-.391.141s-.281-.063-.391-.172c-.828-.75-1.922-1.719-2.578-2.625a.607.607 0 0 1 .016-.718c.531-.719 1.109-1.406 1.641-2.141a8.324 8.324 0 0 1-.641-1.547l-2.859-.422A.57.57 0 0 1 0 15.705v-3.469c0-.234.187-.516.422-.562l2.906-.438c.156-.5.359-.969.609-1.437a37.64 37.64 0 0 0-1.672-2.156c-.094-.109-.156-.234-.156-.375s.063-.25.141-.359c.375-.516 2.484-2.797 3.016-2.797.141 0 .281.063.406.156L7.828 5.94a9.449 9.449 0 0 1 1.422-.594c.109-.953.203-1.969.453-2.906a.573.573 0 0 1 .562-.438h3.469c.281 0 .531.203.562.469l.438 2.875c.484.156.953.344 1.406.578l2.219-1.672c.094-.094.234-.141.375-.141s.281.063.391.156c.828.766 1.922 1.734 2.578 2.656a.534.534 0 0 1 .109.344c0 .141-.047.25-.125.359-.531.719-1.109 1.406-1.641 2.141.266.5.484 1.016.641 1.531l2.859.438a.57.57 0 0 1 .453.562z"/>
+</svg>
+                <span>Advanced</span>
+            </button>
+            <div class="submenu js-submenu" id="advanced-menu-submenu">
+                <!-- this page -->
+                <div class="submenu-column">
+                    <div class="title">Advanced</div>
+                    <ul>
+                        <li><a href="/en-US/docs/Web/HTML/Element/input/radio$history" rel="nofollow">History</a></li>
+                        
+                        
+                        
+
+
+                
+
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+      </div>
+    </div>
+  </div>
+  
+  <div id="toc" class="toc">
+    <div class="center">
+      <div class="toc-head">Jump to:</div>
+        <ol class="toc-links">
+          <li><a rel="internal" href="#Value">Value</a><li><a rel="internal" href="#Additional_attributes">Additional attributes</a><li><a rel="internal" href="#Using_radio_inputs">Using radio inputs</a><li><a rel="internal" href="#Validation">Validation</a><li><a rel="internal" href="#Styling_radio_inputs">Styling radio inputs</a><li><a rel="internal" href="#Specifications">Specifications</a><li><a rel="internal" href="#Browser_compatibility">Browser compatibility</a><li><a rel="internal" href="#See_also">See also</a>
+        </ol>
+    </div>
+  </div>
+  
+
+      <div class="center clear">
+      
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+
+              
+              
+
+              
+
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div></div>
+
+<p><span class="seoSummary"><a href="/en-US/docs/Web/HTML/Element/input" title="The HTML &lt;input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent."><code>&lt;input&gt;</code></a> elements of type <strong><code>radio</code></strong> are generally used in <strong>radio groups</strong>—collections of radio buttons describing a set of related options.</span> Only one radio button in a given group can be selected at the same time. Radio buttons are typically rendered as small circles, which are filled or highlighted when selected.</p>
+
+<div><iframe src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-radio.html" height="250" class="interactive tabbed-standard" frameborder="0" width="100%"></iframe></div>
+
+<p class="hidden">The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone <a rel="noopener" href="https://github.com/mdn/interactive-examples" class="external">https://github.com/mdn/interactive-examples</a> and send us a pull request.</p>
+
+<div id="Basic_example">
+<p>They are called radio buttons because they look and operate in a similar manner to the push buttons on old-fashioned radios, such as the one shown below.</p>
+
+<p><img src="https://mdn.mozillademos.org/files/15610/old-radio.jpg" alt="Shows what radio buttons looked like in the olden days." style="height: 400px; width: 600px;" title="Photo of an old-time radio"></p>
+</div>
+
+<div class="note">
+<p><strong>Note</strong>: <a href="/en-US/docs/Web/HTML/Element/input/checkbox">Checkboxes</a> are similar to radio buttons, but with an important distinction: radio buttons are designed for selecting one value out of a set, whereas checkboxes let you turn individual values on and off. Where multiple controls exist, radio buttons allow one to be selected out of them all, whereas checkboxes allow multiple values to be selected.</p>
+</div>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <td><strong><a href="#Value">Value</a></strong></td>
+   <td>A <a href="/en-US/docs/Web/API/DOMString" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a> representing the value of the radio button.</td>
+  </tr>
+  <tr>
+   <td><strong>Events</strong></td>
+   <td><code><a href="/en-US/docs/Web/Events/change" title="/en-US/docs/Web/Events/change">change</a></code> and <code><a href="/en-US/docs/Web/Events/input" title="/en-US/docs/Web/Events/input">input</a></code></td>
+  </tr>
+  <tr>
+   <td><strong>Supported common attributes</strong></td>
+   <td><code><a href="/en-US/docs/Web/HTML/Element/input#attr-checked">checked</a></code></td>
+  </tr>
+  <tr>
+   <td><strong>IDL attributes</strong></td>
+   <td><code>checked</code> and <code>value</code></td>
+  </tr>
+  <tr>
+   <td><strong>Methods</strong></td>
+   <td><a href="/en-US/docs/Web/API/HTMLInputElement/select" title="The HTMLInputElement.select() method selects all the text in a &lt;textarea> element or in an &lt;input> element that includes a text field."><code>select()</code></a></td>
+  </tr>
+ </tbody>
+</table>
+
+<h2 id="Value">Value</h2>
+
+<p>The <code>value</code> attribute is a <a href="/en-US/docs/Web/API/DOMString" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a> containing the radio button's value. The value is never shown to the user by their <a href="/en-US/docs/Glossary/user_agent" class="glossaryLink" title="user agent: A user agent is a computer program representing a person, for example, a browser in a Web context.">user agent</a>. Instead, it's used to identify which radio button in a group is selected.</p>
+
+<h3 id="Defining_a_radio_group">Defining a radio group</h3>
+
+<p>A radio group is defined by giving each of radio buttons in the group the same <code><a href="/en-US/docs/Web/HTML/Element/input#attr-name">name</a></code>. Once a radio group is established, selecting any radio button in that group automatically deselects any currently-selected radio button in the same group.</p>
+
+<p>You can have as many radio groups on a page as you like, as long as each has its own unique <code>name</code>.</p>
+
+<p>For example, if your form needs to ask the user for their preferred contact method, you might create three radio buttons, each with the <code>name</code> property set to <code>contact</code> but one with the <code><a href="/en-US/docs/Web/HTML/Element/input#attr-value">value</a></code> <code>email</code>, one with the value <code>phone</code>, and one with the value <code>mail</code>. The user never sees the <code>value</code> or the <code>name</code> (unless you expressly add code to display it).</p>
+
+<p>The resulting HTML looks like this:</p>
+
+<pre class="brush: html">&lt;form&gt;
+  &lt;p&gt;Please select your preferred contact method:&lt;/p&gt;
+  &lt;div&gt;
+    &lt;input type="radio" id="contactChoice1"
+     name="contact" value="email"&gt;
+    &lt;label for="contactChoice1"&gt;Email&lt;/label&gt;
+
+    &lt;input type="radio" id="contactChoice2"
+     name="contact" value="phone"&gt;
+    &lt;label for="contactChoice2"&gt;Phone&lt;/label&gt;
+
+    &lt;input type="radio" id="contactChoice3"
+     name="contact" value="mail"&gt;
+    &lt;label for="contactChoice3"&gt;Mail&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+
+<p>Here you see the three radio buttons, each with the <code>name</code> set to <code>contact</code> and each with a unique <code>value</code> that uniquely identifies that individual radio button within the group. They each also have a unique <a href="/en-US/docs/Web/API/Element/id" title="The Element.id property represents the element's identifier, reflecting the id global attribute."><code>id</code></a>, which is used by the <a href="/en-US/docs/Web/HTML/Element/label" title="The HTML &lt;label> element represents a caption for an item in a user interface."><code>&lt;label&gt;</code></a> element's <code><a href="/en-US/docs/Web/HTML/Element/label#attr-for">for</a></code> attribute to associate the labels with the radio buttons.</p>
+
+<p>You can try out this example here:</p>
+
+<p><iframe src="https://mdn.mozillademos.org/en-US/docs/Web/HTML/Element/input/radio$samples/Defining_a_radio_group?revision=1445457" class="live-sample-frame sample-code-frame" height="130" width="600" id="frame_Defining_a_radio_group" frameborder="0"></iframe></p>
+
+<h3 id="Data_representation_of_a_radio_group">Data representation of a radio group</h3>
+
+<p>When the above form is submitted with a radio button selected, the form's data includes an entry in the form <code>contact=<em>value</em></code>. For example, if the user clicks on the "Phone" radio button then submits the form, the form's data will include the line <code>contact=phone</code>.</p>
+
+<p>If you omit the <code>value</code> attribute in the HTML, the submitted form data assigns the value <code>on</code> to the group. In this scenario, if the user clicked on the "Phone" option and submitted the form, the resulting form data would be <code>contact=on</code>, which isn't helpful. So don't forget to set your <code>value</code> attributes!</p>
+
+<div class="note">
+<p><strong>Note</strong>: If no radio button is selected when the form is submitted, the radio group is not included in the submitted form data at all, since there is no value to report.</p>
+</div>
+
+<p>It's fairly uncommon to actually want to allow the form to be submitted without any of the radio buttons in a group selected, so it is usually wise to have one default to the <code>checked</code> state. See <a href="#Selecting_a_radio_button_by_default">Selecting a radio button by default</a> below.</p>
+
+<p>Let's add a little bit of code to our example so we can examine the data generated by this form. The HTML is revised to add a <a href="/en-US/docs/Web/HTML/Element/pre" title="The HTML &lt;pre> element represents preformatted text which is to be presented exactly as written in the HTML file."><code>&lt;pre&gt;</code></a> block to output the form data into:</p>
+
+<pre class="brush: html">&lt;form&gt; 
+  &lt;p&gt;Please select your preferred contact method:&lt;/p&gt;
+  &lt;div&gt;
+    &lt;input type="radio" id="contactChoice1"
+           name="contact" value="email"&gt;
+    &lt;label for="contactChoice1"&gt;Email&lt;/label&gt;
+    &lt;input type="radio" id="contactChoice2"
+           name="contact" value="phone"&gt;
+    &lt;label for="contactChoice2"&gt;Phone&lt;/label&gt;
+    &lt;input type="radio" id="contactChoice3"
+           name="contact" value="mail"&gt;
+    &lt;label for="contactChoice3"&gt;Mail&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;pre id="log"&gt;
+&lt;/pre&gt;
+</pre>
+
+<p>Then we add some <a href="/en-US/docs/Web/JavaScript">JavaScript</a> to set up an event listener on the <code><a href="/en-US/docs/Web/Events/submit" title="/en-US/docs/Web/Events/submit">submit</a></code> event, which is sent when the user clicks the "Submit" button:</p>
+
+<pre class="brush: js">var form = document.querySelector("form");
+var log = document.querySelector("#log");
+
+form.addEventListener("submit", function(event) {
+  var data = new FormData(form);
+  var output = "";
+  for (const entry of data) {
+    output = entry[0] + "=" + entry[1] + "\r";
+  };
+  log.innerText = output;
+  event.preventDefault();
+}, false);</pre>
+
+<p>Try this example out and see how there's never more than one result for the <code>contact</code> group.</p>
+
+<p><iframe src="https://mdn.mozillademos.org/en-US/docs/Web/HTML/Element/input/radio$samples/Data_representation_of_a_radio_group?revision=1445457" class="live-sample-frame sample-code-frame" height="130" width="600" id="frame_Data_representation_of_a_radio_group" frameborder="0"></iframe></p>
+
+<h2 id="Additional_attributes">Additional attributes</h2>
+
+<p>In addition to the common attributes shared by all <a href="/en-US/docs/Web/HTML/Element/input" title="The HTML &lt;input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent."><code>&lt;input&gt;</code></a> elements, <code>radio</code> inputs support the following attributes:</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Attribute</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code><a href="#checked">checked</a></code></td>
+   <td>A Boolean indicating whether or not this radio button is the currently-selected item in the group</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3 id="checked"><strong id="attr-checked"><code>checked</code></strong></h3>
+
+<p>A Boolean attribute which, if present, indicates that this radio button is the currently selected one in the group.</p>
+
+<p>Unlike other browsers, Firefox by default <a rel="noopener" href="https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing" class="external">persists the dynamic checked state</a> of an <code>&lt;input&gt;</code> across page loads. Use the <code><a href="/en-US/docs/Web/HTML/Element/input#attr-autocomplete">autocomplete</a></code> attribute to control this feature.</p>
+
+<h2 id="Using_radio_inputs">Using radio inputs</h2>
+
+<p>We already covered the fundamentals of radio buttons above. Let's now look at the other common radio-button-related features and techniques you may need to know about.</p>
+
+<h3 id="Selecting_a_radio_button_by_default">Selecting a radio button by default</h3>
+
+<p>To make a radio button selected by default, you simply include <code>checked</code> attribute, as shown in this revised version of the previous example:</p>
+
+<pre class="brush: html">&lt;form&gt;
+  &lt;p&gt;Please select your preferred contact method:&lt;/p&gt;
+  &lt;div&gt;
+    &lt;input type="radio" id="contactChoice1"
+     name="contact" value="email" checked&gt;
+    &lt;label for="contactChoice1"&gt;Email&lt;/label&gt;
+
+    &lt;input type="radio" id="contactChoice2"
+     name="contact" value="phone"&gt;
+    &lt;label for="contactChoice2"&gt;Phone&lt;/label&gt;
+
+    &lt;input type="radio" id="contactChoice3"
+     name="contact" value="mail"&gt;
+    &lt;label for="contactChoice3"&gt;Mail&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+
+<p><iframe src="https://mdn.mozillademos.org/en-US/docs/Web/HTML/Element/input/radio$samples/Selecting_a_radio_button_by_default?revision=1445457" class="live-sample-frame sample-code-frame" height="130" width="600" id="frame_Selecting_a_radio_button_by_default" frameborder="0"></iframe></p>
+
+<p>In this case, the first radio button is now selected by default.</p>
+
+<div class="note">
+<p><strong>Note</strong>: If you put the <code>checked</code> attribute on more than one radio button, later instances will override earlier ones; that is, the last <code>checked</code> radio button will be the one that is selected. This is because only one radio button in a group can ever be selected at once, and the user agent automatically deselects others each time a new one is marked as checked.</p>
+</div>
+
+<h3 id="Providing_a_bigger_hit_area_for_your_radio_buttons">Providing a bigger hit area for your radio buttons</h3>
+
+<p>In the above examples, you may have noticed that you can select a radio button by clicking on its associated <a href="/en-US/docs/Web/HTML/Element/label" title="The HTML &lt;label> element represents a caption for an item in a user interface."><code>&lt;label&gt;</code></a> element, as well as on the radio button itself. This is a really useful feature of HTML form labels that makes it easier for users to click the option they want, especially on small-screen devices like smartphones.</p>
+
+<p>Beyond accessibility, this is another good reason to properly set up <code>&lt;label&gt;</code> elements on your forms.</p>
+
+<h2 id="Validation">Validation</h2>
+
+<p>Radio buttons don't participate in constraint validation; they have no real value to be constrained.</p>
+
+<h2 id="Styling_radio_inputs">Styling radio inputs</h2>
+
+<p>The following example shows a slightly more thorough version of the example we've seen throughout the article, with some additional styling, and with better semantics established through use of specialized elements. The HTML looks like this:</p>
+
+<pre class="brush: html">&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Please select your preferred contact method:&lt;/legend&gt;
+    &lt;div&gt;
+      &lt;input type="radio" id="contactChoice1"
+       name="contact" value="email" checked&gt;
+      &lt;label for="contactChoice1"&gt;Email&lt;/label&gt;
+
+      &lt;input type="radio" id="contactChoice2"
+       name="contact" value="phone"&gt;
+      &lt;label for="contactChoice2"&gt;Phone&lt;/label&gt;
+
+      &lt;input type="radio" id="contactChoice3"
+       name="contact" value="mail"&gt;
+      &lt;label for="contactChoice3"&gt;Mail&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+
+<p>There's not much new to note here except for the addition of <a href="/en-US/docs/Web/HTML/Element/fieldset" title="The HTML &lt;fieldset> element is used to group several controls as well as labels (&lt;label>) within a web form."><code>&lt;fieldset&gt;</code></a> and <a href="/en-US/docs/Web/HTML/Element/legend" title="The HTML &lt;legend> element represents a caption for the content of its parent &lt;fieldset>."><code>&lt;legend&gt;</code></a> elements, which help to group the functionality nicely and in a semantic way.</p>
+
+<p>The CSS involved is a bit more significant:</p>
+
+<pre class="brush: css">html {
+  font-family: sans-serif;
+}
+
+div:first-of-type {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+label {
+  margin-right: 15px;
+  line-height: 32px;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  outline: none;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input:checked {
+  border: 6px solid black;
+}
+
+button,
+legend {
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 0;
+  border: 0;
+  font-size: 14px;
+}
+
+button:hover,
+button:focus {
+  color: #999;
+}
+
+button:active {
+  background-color: white;
+  color: black;
+  outline: 1px solid black;
+}</pre>
+
+<p>Most notable here is the use of the <a href="/en-US/docs/Web/CSS/-moz-appearance" title="The -moz-appearance CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme."><code>-moz-appearance</code></a> property (with prefixes needed to support some browsers). By default, radio buttons (and <a href="/en-US/docs/Web/HTML/Element/input/checkbox">checkboxes</a>) are styled with the operating system's native styles for those controls. By specifying <code>appearance: none</code>, you can remove the native styling altogether, and create your own styles for them. Here we've used a <a href="/en-US/docs/Web/CSS/border" title="The border CSS property sets an element's border. It's a shorthand for border-width, border-style, and border-color."><code>border</code></a> along with <a href="/en-US/docs/Web/CSS/border-radius" title="The border-radius CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners."><code>border-radius</code></a> and a <a href="/en-US/docs/Web/CSS/transition" title="The transition CSS property is a shorthand property for transition-property, transition-duration, transition-timing-function, and transition-delay."><code>transition</code></a> to create a nice animating radio selection. Notice also how the <a href="/en-US/docs/Web/CSS/:checked" title='The :checked CSS pseudo-class selector represents any radio (&lt;input type="radio">), checkbox (&lt;input type="checkbox">), or option (&lt;option> in a &lt;select>) element that is checked or toggled to an on state.'><code>:checked</code></a> pseudo-class is used to specify the styles for the radio button's appearance when selected.</p>
+
+<div class="note">
+<p><strong>Compatibility note</strong>: If you wish to use the <a href="/en-US/docs/Web/CSS/appearance" title="The -moz-appearance CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme."><code>appearance</code></a> property, you should test it very carefully. Although it is supported in most modern browsers, its implementation varies widely. In older browsers, even the keyword <code>none</code> does not have the same effect across different browsers, and some do not support it at all. The differences are smaller in the newest browsers.</p>
+</div>
+
+<p><iframe src="https://mdn.mozillademos.org/en-US/docs/Web/HTML/Element/input/radio$samples/Styling_radio_inputs?revision=1445457" class="live-sample-frame sample-code-frame" height="120" width="600" id="frame_Styling_radio_inputs" frameborder="0"></iframe></p>
+
+<p>Notice that when clicking on a radio button, there's a nice, smooth fade out/in effect as the two buttons change state. In addition, the style and coloring of the legend and submit button are customized to have strong contrast. This might not be a look you'd want in a real web application, but it definitely shows off the possibilities.</p>
+
+<h2 id="Specifications">Specifications</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th> </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a rel="noopener" href="https://html.spec.whatwg.org/multipage/forms.html#radio-button-state-(type=radio)" lang="en" class="external" hreflang="en">HTML Living Standard<br><small lang="en-US">The definition of '&lt;input type="radio"&gt;' in that specification.</small></a></td>
+   <td><span class="spec-Living">Living Standard</span></td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a rel="noopener" href="https://www.w3.org/TR/html50/forms.html#radio-button-state-(type=radio)" lang="en" class="external" hreflang="en">HTML5<br><small lang="en-US">The definition of '&lt;input type="radio"&gt;' in that specification.</small></a></td>
+   <td><span class="spec-REC">Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+
+<h2 id="Browser_compatibility">Browser compatibility</h2>
+
+<div class="hidden">The compatibility table on this page is generated from structured data. If you'd like to contribute to the data, please check out <a rel="noopener" href="https://github.com/mdn/browser-compat-data" class="external">https://github.com/mdn/browser-compat-data</a> and send us a pull request.</div>
+
+<p></p><div class="bc-data"><a rel="noopener" href="https://github.com/mdn/browser-compat-data" class="bc-github-link external">Update compatibility data on GitHub</a><table class="bc-table bc-table-web"><thead><tr class="bc-platforms"><td></td><th colspan="6" class="bc-platform-desktop"><span>Desktop</span></th><th colspan="7" class="bc-platform-mobile"><span>Mobile</span></th></tr><tr class="bc-browsers"><td></td><th class="bc-browser-chrome"><span class="bc-head-txt-label bc-head-icon-chrome">Chrome</span></th><th class="bc-browser-edge"><span class="bc-head-txt-label bc-head-icon-edge">Edge</span></th><th class="bc-browser-firefox"><span class="bc-head-txt-label bc-head-icon-firefox">Firefox</span></th><th class="bc-browser-ie"><span class="bc-head-txt-label bc-head-icon-ie">Internet Explorer</span></th><th class="bc-browser-opera"><span class="bc-head-txt-label bc-head-icon-opera">Opera</span></th><th class="bc-browser-safari"><span class="bc-head-txt-label bc-head-icon-safari">Safari</span></th><th class="bc-browser-webview_android"><span class="bc-head-txt-label bc-head-icon-webview_android">Android webview</span></th><th class="bc-browser-chrome_android"><span class="bc-head-txt-label bc-head-icon-chrome_android">Chrome for Android</span></th><th class="bc-browser-edge_mobile"><span class="bc-head-txt-label bc-head-icon-edge_mobile">Edge Mobile</span></th><th class="bc-browser-firefox_android"><span class="bc-head-txt-label bc-head-icon-firefox_android">Firefox for Android</span></th><th class="bc-browser-opera_android"><span class="bc-head-txt-label bc-head-icon-opera_android">Opera for Android</span></th><th class="bc-browser-safari_ios"><span class="bc-head-txt-label bc-head-icon-safari_ios">Safari on iOS</span></th><th class="bc-browser-samsunginternet_android"><span class="bc-head-txt-label bc-head-icon-samsunginternet_android">Samsung Internet</span></th></tr></thead><tbody><tr><th scope="row">Basic support</th><td class="bc-supports-yes bc-browser-chrome"><span class="bc-browser-name">Chrome</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-edge"><span class="bc-browser-name">Edge</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-firefox"><span class="bc-browser-name">Firefox</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-ie"><span class="bc-browser-name">IE</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-opera"><span class="bc-browser-name">Opera</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-safari"><span class="bc-browser-name">Safari</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-webview_android"><span class="bc-browser-name">WebView Android</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-chrome_android"><span class="bc-browser-name">Chrome Android</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-edge_mobile"><span class="bc-browser-name">Edge Mobile</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-firefox_android"><span class="bc-browser-name">Firefox Android</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              4</td><td class="bc-supports-yes bc-browser-opera_android"><span class="bc-browser-name">Opera Android</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-yes bc-browser-safari_ios"><span class="bc-browser-name">Safari iOS</span><abbr class="bc-level-yes only-icon" title="Full support">
+                <span>Full support</span>
+              </abbr>
+              Yes</td><td class="bc-supports-unknown bc-browser-samsunginternet_android"><span class="bc-browser-name">Samsung Internet Android</span><abbr title="Compatibility unknown; please update this.">
+                ?
+              </abbr></td></tr></tbody></table><section id="sect1" class="bc-legend"><h3 id="Legend" class="offscreen">Legend</h3><dl><dt><span class="bc-supports-yes bc-supports">
+                <abbr class="bc-level bc-level-yes only-icon" title="Full support">
+                 <span>Full support</span>
+                  
+                </abbr></span></dt><dd>Full support</dd><dt><span class="bc-supports-unknown bc-supports">
+                <abbr class="bc-level bc-level-unknown only-icon" title="Compatibility unknown">
+                 <span>Compatibility unknown</span>
+                  
+                </abbr></span></dt><dd>Compatibility unknown</dd></dl></section></div><p></p>
+
+<h2 id="See_also">See also</h2>
+
+<ul>
+ <li><a href="/en-US/docs/Web/HTML/Element/input" title="The HTML &lt;input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent."><code>&lt;input&gt;</code></a> and the <a href="/en-US/docs/Web/API/HTMLInputElement" title="The HTMLInputElement interface provides special properties and methods for manipulating the options, layout, and presentation of &lt;input> elements."><code>HTMLInputElement</code></a> interface that implements it.</li>
+ <li><a href="/en-US/docs/Web/API/RadioNodeList" title="The RadioNodeList interface represents a collection of radio elements in a &lt;form> or a &lt;fieldset> element."><code>RadioNodeList</code></a>: the interface that describes a list of radio buttons</li>
+</ul>
+                  
+                
+              </article>
+
+              <!-- contributors -->
+              <div class="wiki-block contributors">
+                <h2 class="offscreen">Document Tags and Contributors</h2>
+                
+                
+  <div class="tag-attach-list contributors-sub">
+    <svg class="icon icon-tags" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" aria-hidden="true">
+    <path d="M7 7c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm16.672 9c0 .531-.219 1.047-.578 1.406l-7.672 7.688c-.375.359-.891.578-1.422.578s-1.047-.219-1.406-.578L1.422 13.906C.625 13.125 0 11.609 0 10.5V4c0-1.094.906-2 2-2h6.5c1.109 0 2.625.625 3.422 1.422l11.172 11.156c.359.375.578.891.578 1.422zm6 0c0 .531-.219 1.047-.578 1.406l-7.672 7.688a2.08 2.08 0 0 1-1.422.578c-.812 0-1.219-.375-1.75-.922l7.344-7.344c.359-.359.578-.875.578-1.406s-.219-1.047-.578-1.422L14.422 3.422C13.625 2.625 12.11 2 11 2h3.5c1.109 0 2.625.625 3.422 1.422l11.172 11.156c.359.375.578.891.578 1.422z"/>
+</svg>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="/en-US/docs/tag/Choosing%20Options" rel="nofollow">Choosing Options</a></li>
+      
+        <li><a href="/en-US/docs/tag/Element" rel="nofollow">Element</a></li>
+      
+        <li><a href="/en-US/docs/tag/form" rel="nofollow">form</a></li>
+      
+        <li><a href="/en-US/docs/tag/Form%20Options" rel="nofollow">Form Options</a></li>
+      
+        <li><a href="/en-US/docs/tag/HTML" rel="nofollow">HTML</a></li>
+      
+        <li><a href="/en-US/docs/tag/HTML%20forms" rel="nofollow">HTML forms</a></li>
+      
+        <li><a href="/en-US/docs/tag/HTML%20input" rel="nofollow">HTML input</a></li>
+      
+        <li><a href="/en-US/docs/tag/HTML%20Input%20Types" rel="nofollow">HTML Input Types</a></li>
+      
+        <li><a href="/en-US/docs/tag/Input" rel="nofollow">Input</a></li>
+      
+        <li><a href="/en-US/docs/tag/Input%20Types" rel="nofollow">Input Types</a></li>
+      
+        <li><a href="/en-US/docs/tag/Options" rel="nofollow">Options</a></li>
+      
+        <li><a href="/en-US/docs/tag/radio" rel="nofollow">radio</a></li>
+      
+        <li><a href="/en-US/docs/tag/radio%20button" rel="nofollow">radio button</a></li>
+      
+        <li><a href="/en-US/docs/tag/Radio%20Buttons" rel="nofollow">Radio Buttons</a></li>
+      
+        <li><a href="/en-US/docs/tag/Radio%20Groups" rel="nofollow">Radio Groups</a></li>
+      
+        <li><a href="/en-US/docs/tag/Reference" rel="nofollow">Reference</a></li>
+      
+    </ul>
+  </div>
+
+
+                
+                  <div class="contributors-sub">
+                    <svg class="icon icon-group" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" aria-hidden="true">
+    <path d="M9.266 14a5.532 5.532 0 0 0-4.141 2H3.031C1.468 16 0 15.25 0 13.516 0 12.25-.047 8 1.937 8c.328 0 1.953 1.328 4.062 1.328.719 0 1.406-.125 2.078-.359A7.624 7.624 0 0 0 7.999 10c0 1.422.453 2.828 1.266 4zM26 23.953C26 26.484 24.328 28 21.828 28H8.172C5.672 28 4 26.484 4 23.953 4 20.422 4.828 15 9.406 15c.531 0 2.469 2.172 5.594 2.172S20.063 15 20.594 15C25.172 15 26 20.422 26 23.953zM10 4c0 2.203-1.797 4-4 4S2 6.203 2 4s1.797-4 4-4 4 1.797 4 4zm11 6c0 3.313-2.688 6-6 6s-6-2.688-6-6 2.688-6 6-6 6 2.688 6 6zm9 3.516C30 15.25 28.531 16 26.969 16h-2.094a5.532 5.532 0 0 0-4.141-2A7.066 7.066 0 0 0 22 10a7.6 7.6 0 0 0-.078-1.031A6.258 6.258 0 0 0 24 9.328C26.109 9.328 27.734 8 28.062 8c1.984 0 1.937 4.25 1.937 5.516zM28 4c0 2.203-1.797 4-4 4s-4-1.797-4-4 1.797-4 4-4 4 1.797 4 4z"/>
+</svg>
+                    <strong>Contributors to this page:</strong>
+                    
+        <a href="/en-US/profiles/mfuji09">mfuji09</a>, 
+    
+        <a href="/en-US/profiles/wbamberg">wbamberg</a>, 
+    
+        <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="/en-US/profiles/prsdta">prsdta</a>, 
+    
+        <a href="/en-US/profiles/fscholz">fscholz</a>, 
+    
+        <a href="/en-US/profiles/irenesmith">irenesmith</a>, 
+    
+        <a href="/en-US/profiles/sideshowbarker">sideshowbarker</a>, 
+    
+        <a href="/en-US/profiles/MMarinero">MMarinero</a>, 
+    
+        <a href="/en-US/profiles/sskogen">sskogen</a>, 
+    
+        <a href="/en-US/profiles/mfluehr">mfluehr</a>, 
+    
+        <a href="/en-US/profiles/chrisdavidmills">chrisdavidmills</a>, 
+    
+        <a href="/en-US/profiles/Shidigital">Shidigital</a>, 
+    
+        <a href="/en-US/profiles/eystein">eystein</a>, 
+    
+        <a href="/en-US/profiles/ku3nsting">ku3nsting</a>
+    
+                  </div>
+                
+
+                
+                  <div class="contributors-sub">
+                    <svg class="icon icon-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M14 8.5v7c0 .281-.219.5-.5.5h-5a.494.494 0 0 1-.5-.5v-1c0-.281.219-.5.5-.5H12V8.5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zm6.5 5.5c0-4.688-3.813-8.5-8.5-8.5S3.5 9.313 3.5 14s3.813 8.5 8.5 8.5 8.5-3.813 8.5-8.5zm3.5 0c0 6.625-5.375 12-12 12S0 20.625 0 14 5.375 2 12 2s12 5.375 12 12z"/>
+</svg>
+                    <strong>Last updated by:</strong>
+                    <a href="/en-US/profiles/mfuji09">mfuji09</a>,
+                    <time datetime="2018-12-15T22:04:12.177769-08:00">Dec 15, 2018, 10:04:12 PM</time>
+                  </div>
+                
+              </div>
+            </div>
+
+            
+              <!-- quick links and approvals strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+                <!-- crumbs -->
+                
+  
+    <nav class="crumbs" role="navigation">
+      <ol typeof="BreadcrumbList" vocab="https://schema.org/" aria-label="breadcrumbs">
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="/en-US/docs/Web" property="item" typeof="WebPage">
+              <span property="name">Web technology for developers</span>
+            </a>
+            <meta property="position" content="1">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="/en-US/docs/Web/HTML" property="item" typeof="WebPage">
+              <span property="name">HTML: HyperText Markup Language</span>
+            </a>
+            <meta property="position" content="2">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="/en-US/docs/Web/HTML/Element" property="item" typeof="WebPage">
+              <span property="name">HTML elements reference</span>
+            </a>
+            <meta property="position" content="3">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="/en-US/docs/Web/HTML/Element/input" property="item" typeof="WebPage">
+              <span property="name">&lt;input&gt;: The Input (Form Input) element</span>
+            </a>
+            <meta property="position" content="4">
+          </li>
+        
+        <li property="itemListElement" typeof="ListItem" class="crumb">
+          <span property="name" aria-current="page">&lt;input type=&#34;radio&#34;&gt;</span>
+        </li>
+      </ol>
+    </nav>
+  
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="quick-links-head">Related Topics</div>
+    
+  <ol>
+   
+            <li><a href="/en-US/docs/Web/HTML/Element/button" title="The HTML &lt;button> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality."><code>&lt;button&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/datalist" title="The HTML &lt;datalist> element contains a set of &lt;option> elements that represent the values available for other controls."><code>&lt;datalist&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/fieldset" title="The HTML &lt;fieldset> element is used to group several controls as well as labels (&lt;label>) within a web form."><code>&lt;fieldset&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/form" title="The HTML &lt;form> element represents a document section that contains interactive controls for submitting information to a web server."><code>&lt;form&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/input" title="The HTML &lt;input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent."><code>&lt;input&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/keygen" title="The HTML &lt;keygen> element exists to facilitate generation of key material, and submission of the public key as part of an HTML form. This mechanism is designed for use with Web-based certificate management systems. It is expected that the &lt;keygen> element will be used in an HTML form along with other information needed to construct a certificate request, and that the result of the process will be a signed certificate."><code>&lt;keygen&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/label" title="The HTML &lt;label> element represents a caption for an item in a user interface."><code>&lt;label&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/legend" title="The HTML &lt;legend> element represents a caption for the content of its parent &lt;fieldset>."><code>&lt;legend&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/meter" title="The HTML &lt;meter> element represents either a scalar value within a known range or a fractional value."><code>&lt;meter&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/optgroup" title="The HTML &lt;optgroup> element creates a grouping of options within a &lt;select> element."><code>&lt;optgroup&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/option" title="The HTML &lt;option> element is used to define an item contained in a &lt;select>, an &lt;optgroup>, or a &lt;datalist> element. As such, &lt;option> can represent menu items in popups and other lists of items in an HTML document."><code>&lt;option&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/output" title="The HTML Output element (&lt;output>) is a container element into which a site or app can inject the results of a calculation or the outcome of a user action."><code>&lt;output&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/progress" title="The HTML &lt;progress> element displays an indicator showing the completion progress of a task, typically displayed as a progress bar."><code>&lt;progress&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/select" title="The HTML &lt;select> element represents a control that provides a menu of options"><code>&lt;select&gt;</code></a></li>
+  
+            <li><a href="/en-US/docs/Web/HTML/Element/textarea" title="The HTML &lt;textarea> element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form."><code>&lt;textarea&gt;</code></a></li>
+  
+    
+   <li><details open><summary><code>&lt;input&gt;</code> types</summary>
+    <ol><li><a href="/en-US/docs/Web/HTML/Element/input/button" title='&lt;input> elements of type "button" are rendered as simple push buttons, which can be programmed to control custom functionality anywhere on a webpage as required when assigned an event handler function (typically for the click event).'><code>&lt;input type="button"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/checkbox" title="&lt;input> elements of type checkbox are rendered by default as square boxes that are checked (ticked) when activated, like you might see in an official government paper form. They allow you to select single values for submission in a form (or not)."><code>&lt;input type="checkbox"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/color" title='&lt;input> elements of type "color" provide a user interface element that lets a user specify a color, either by using a visual color picker interface or by entering the color into a text field in "#rrggbb" hexadecimal format.'><code>&lt;input type="color"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/date" title="&lt;input> elements of type date create input fields that let the user enter a date, either using a text box that automatically validates the content, or using a special date picker interface."><code>&lt;input type="date"&gt;</code></a></li><li><span class="sidebar-icon"><span class="icon-only-inline" title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><a href="/en-US/docs/Web/HTML/Element/input/datetime" title='The HTML &lt;input type="datetime"> was a control for entering a date and time (hour, minute, second, and fraction of a second) as well as a timezone. This feature has been removed from WHATWG HTML, and is no longer supported in browsers.'><code>&lt;input type="datetime"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/datetime-local" title="&lt;input> elements of type datetime-local create input controls that let the user easily enter both a date and a time, including the year, month, and day as well as the time in hours and minutes."><code>&lt;input type="datetime-local"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/email" title="&lt;input> elements of type email are used to let the user enter and edit an e-mail address, or, if the multiple attribute is specified, a list of e-mail addresses."><code>&lt;input type="email"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/file" title='&lt;input> elements with type="file" let the user choose one or more files from their device storage. Once chosen, the files can be uploaded to a server using form submission, or manipulated using JavaScript code and the File API.'><code>&lt;input type="file"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/hidden" title="&lt;input> elements of type &quot;hidden&quot; let web developers include data that cannot be seen or modified by users when a form is submitted. For example, the ID of the content that is currently being ordered or edited, or a unique security token. Hidden inputs are completely invisible in the rendered page, and there is no way to make it visible in the page's content."><code>&lt;input type="hidden"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/image" title="&lt;input> elements of type image are used to create graphical submit buttons, i.e. submit buttons that take the form of an image rather than text."><code>&lt;input type="image"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/month" title='&lt;input> elements of type month create input fields that let the user enter a month and year allowing a month and year to be easily entered. The value is a string whose value is in the format "YYYY-MM", where YYYY is the four-digit year and MM is the month number.'><code>&lt;input type="month"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/number" title="&lt;input> elements of type number are used to let the user enter a number. They include built-in validation to reject non-numerical entries."><code>&lt;input type="number"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/password" title="&lt;input> elements of type password provide a way for the user to securely enter a password."><code>&lt;input type="password"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/radio" title="&lt;input> elements of type radio are generally used in radio groups—collections of radio buttons describing a set of related options."><code>&lt;input type="radio"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/range" title='&lt;input> elements of type "range" let the user specify a numeric value which must be no less than a given value, and no more than another given value. The precise value, however, is not considered important. This is typically represented using a slider or dial control rather than a text entry box like the "number" input type.'><code>&lt;input type="range"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/reset" title='&lt;input> elements of type "reset"  are rendered as buttons, with a default click event handler that resets all of the inputs in the form to their initial values.'><code>&lt;input type="reset"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/search" title='&lt;input> elements of type "search" are text fields designed for the user to enter search queries into. These are functionally identical to text inputs, but may be styled differently by the user agent. '><code>&lt;input type="search"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/submit" title='&lt;input> elements of type "submit" are rendered as buttons. When the click event occurs (typically because the user clicked the button), the user agent attempts to submit the form to the server.'><code>&lt;input type="submit"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/tel" title='&lt;input> elements of type "tel" are used to let the user enter and edit a telephone number. Unlike &lt;input type="email"> and &lt;input type="url"> , the input value is not automatically validated to a particular format before the form can be submitted, because formats for telephone numbers vary so much around the world.'><code>&lt;input type="tel"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/text" title="&lt;input> elements of type text create basic single-line text fields."><code>&lt;input type="text"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/time" title="&lt;input> elements of type time create input fields designed to let the user easily enter a time (hours and minutes, and optionally seconds)."><code>&lt;input type="time"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/url" title="&lt;input> elements of type url are used to let the user enter and edit a URL."><code>&lt;input type="url"&gt;</code></a></li><li><a href="/en-US/docs/Web/HTML/Element/input/week" title='&lt;input> elements of type "week" create input fields allowing easy entry of a year plus the ISO 8601 week number during that year (i.e., week 1 to 52 or 53).'><code>&lt;input type="week"&gt;</code></a></li></ol></details></li>
+    
+   <li><details><summary>HTML Elements</summary><ol>
+   <li>A
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/a" title="The HTML &lt;a> element (or anchor element) creates a hyperlink to other web pages, files, locations within the same page, email addresses, or any other URL."><code>&lt;a&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/abbr" title="The HTML Abbreviation element (&lt;abbr>) represents an abbreviation or acronym; the optional title attribute can provide an expansion or description for the abbreviation."><code>&lt;abbr&gt;</code></a></li>
+  <li><s class="obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/acronym" title="The HTML Acronym Element (&lt;acronym>) allows authors to clearly indicate a sequence of characters that compose an acronym or abbreviation for a word. This element has been removed in HTML5. Use &lt;abbr> element."><code>&lt;acronym&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/address" title="The HTML &lt;address> element indicates that the enclosed HTML provides contact information for a person or people, or for an organization."><code>&lt;address&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/applet" title="The obsolete HTML Applet Element (&lt;applet>) embeds a Java applet into the document; this element has been deprecated in favor of &lt;object>."><code>&lt;applet&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/area" title="The HTML &lt;area> element defines a hot-spot region on an image, and optionally associates it with a hypertext link. This element is used only within a &lt;map> element."><code>&lt;area&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/article" title="The HTML &lt;article> element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication). Examples include: a forum post, a magazine or newspaper article, or a blog entry."><code>&lt;article&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/aside" title="The HTML &lt;aside> element represents a portion of a document whose content is only indirectly related to the document's main content."><code>&lt;aside&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/audio" title="The HTML &lt;audio> element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the &lt;source> element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream."><code>&lt;audio&gt;</code></a></li>
+ </ol>
+ </li><li>B
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/b" title="The HTML Bring Attention To element (&lt;b>)  is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance."><code>&lt;b&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/base" title="The HTML &lt;base> element specifies the base URL to use for all relative URLs contained within a document. There can be only one &lt;base> element in a document."><code>&lt;base&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/basefont" title="The obsolete HTML Base Font element (&lt;basefont>) sets a default font face, size, and color for the other elements which are descended from its parent element."><code>&lt;basefont&gt;</code></a></s></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/bdi" title="The HTML Bidirectional Isolate element (&lt;bdi>)  tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text."><code>&lt;bdi&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/bdo" title="The HTML Bidirectional Text Override element (&lt;bdo>) overrides the current directionality of text, so that the text within is rendered in a different direction."><code>&lt;bdo&gt;</code></a></li>
+  <li><s class="nonStdElement"><a href="/en-US/docs/Web/HTML/Element/bgsound" title="The Internet Explorer only HTML Background Sound element (&lt;bgsound>) sets up a sound file to play in the background while the page is used; use &lt;audio> instead."><code>&lt;bgsound&gt;</code></a></s></li>
+  <li><s class="obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/big" title="The obsolete HTML Big Element (&lt;big>) renders the enclosed text at a font size one level larger than the surrounding text (medium becomes large, for example)."><code>&lt;big&gt;</code></a></s></li>
+  <li><s class="nonStdElement"><a href="/en-US/docs/Web/HTML/Element/blink" title="The HTML Blink Element (&lt;blink>) is a non-standard element which causes the enclosed text to flash slowly."><code>&lt;blink&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/blockquote" title="The HTML &lt;blockquote> Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the &lt;cite> element."><code>&lt;blockquote&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/body" title="The HTML &lt;body> Element represents the content of an HTML document. There can be only one &lt;body> element in a document."><code>&lt;body&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/br" title="The HTML &lt;br> element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant."><code>&lt;br&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/button" title="The HTML &lt;button> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality."><code>&lt;button&gt;</code></a></li>
+ </ol>
+ </li><li>C
+ <ol>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/canvas" title="Use the HTML &lt;canvas> element with either the canvas scripting API or the WebGL API to draw graphics and animations."><code>&lt;canvas&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/caption" title="The HTML Table Caption element (&lt;caption>) specifies the caption (or title) of a table, and if used is always the first child of a &lt;table>."><code>&lt;caption&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/center" title="The obsolete HTML Center Element (&lt;center>) is a block-level element that displays its block-level or inline contents centered horizontally within its containing element."><code>&lt;center&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/cite" title="The HTML Citation element (&lt;cite>) is used to describe a reference to a cited creative work, and must include either the title or author or the URL of that work."><code>&lt;cite&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/code" title="The HTML &lt;code> element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code."><code>&lt;code&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/col" title="The HTML &lt;col> element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a &lt;colgroup> element."><code>&lt;col&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/colgroup" title="The HTML &lt;colgroup> element defines a group of columns within a table."><code>&lt;colgroup&gt;</code></a></li>
+  <li class="webcomp"><a href="/en-US/docs/Web/HTML/Element/content" title="The HTML &lt;content> element—an obsolete part of the Web Components suite of technologies—was used inside of Shadow DOM as an insertion point, and wasn't meant to be used in ordinary HTML."><code>&lt;content&gt;</code></a></li>
+ </ol>
+ </li><li>D
+ <ol>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/data" title="The HTML &lt;data> element links a given content with a machine-readable translation. If the content is time- or date-related, the &lt;time> element must be used."><code>&lt;data&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/datalist" title="The HTML &lt;datalist> element contains a set of &lt;option> elements that represent the values available for other controls."><code>&lt;datalist&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/dd" title="The HTML &lt;dd> element provides the details about or the definition of the preceding term (&lt;dt>) in a description list (&lt;dl>)."><code>&lt;dd&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/del" title="The HTML &lt;del> element represents a range of text that has been deleted from a document."><code>&lt;del&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/details" title='The HTML Details Element (&lt;details>) creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state.'><code>&lt;details&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/dfn" title="The HTML Definition element (&lt;dfn>) is used to indicate the term being defined within the context of a definition phrase or sentence."><code>&lt;dfn&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/dialog" title="The HTML &lt;dialog> element represents a dialog box or other interactive component, such as an inspector or window."><code>&lt;dialog&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/dir" title="The obsolete HTML Directory element (&lt;dir>) is used as a container for a directory of files and/or folders, potentially with styles and icons applied by the user agent."><code>&lt;dir&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/div" title="The HTML Content Division element (&lt;div>) is the generic container for flow content. It has no effect on the content or layout until styled using CSS."><code>&lt;div&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/dl" title="The HTML &lt;dl> element represents a description list. The element encloses a list of groups of terms (specified using the &lt;dt> element) and descriptions (provided by &lt;dd> elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs)."><code>&lt;dl&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/dt" title="The HTML &lt;dt> element specifies a term in a description or definition list, and as such must be used inside a &lt;dl> element."><code>&lt;dt&gt;</code></a></li>
+ </ol>
+ </li><li>E
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/em" title="The HTML &lt;em> element marks text that has stress emphasis. The &lt;em> element can be nested, with each level of nesting indicating a greater degree of emphasis."><code>&lt;em&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/embed" title="The HTML &lt;embed> element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in."><code>&lt;embed&gt;</code></a></li>
+ </ol>
+ </li><li>F
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/fieldset" title="The HTML &lt;fieldset> element is used to group several controls as well as labels (&lt;label>) within a web form."><code>&lt;fieldset&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/figcaption" title="The HTML &lt;figcaption> element represents a caption or legend for the rest of the contents its parent &lt;figure> element, if any."><code>&lt;figcaption&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/figure" title="The HTML &lt;figure> element represents self-contained content, frequently with a caption (&lt;figcaption>), and is typically referenced as a single unit."><code>&lt;figure&gt;</code></a></li>
+  <li><s class="deprecatedElement obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/font" title="The HTML Font Element (&lt;font>) defines the font size, color and face for its content."><code>&lt;font&gt;</code></a></s></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/footer" title="The HTML &lt;footer> element represents a footer for its nearest sectioning content or sectioning root element. A footer typically contains information about the author of the section, copyright data or links to related documents."><code>&lt;footer&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/form" title="The HTML &lt;form> element represents a document section that contains interactive controls for submitting information to a web server."><code>&lt;form&gt;</code></a></li>
+  <li><s class="obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/frame" title="&lt;frame> is an HTML element which defines a particular area in which another HTML document can be displayed. A frame should be used within a &lt;frameset>."><code>&lt;frame&gt;</code></a></s></li>
+  <li><s class="obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/frameset" title="The HTML &lt;frameset> element is used to contain &lt;frame> elements."><code>&lt;frameset&gt;</code></a></s></li>
+ </ol>
+ </li><li>G H
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/h1" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically."><code>&lt;h1&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/h2" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically."><code>&lt;h2&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/h3" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically."><code>&lt;h3&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/h4" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically."><code>&lt;h4&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/h5" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically."><code>&lt;h5&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/h6" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically."><code>&lt;h6&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/head" title="The HTML &lt;head> element provides general information (metadata) about the document, including its title and links to its scripts and style sheets."><code>&lt;head&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/header" title="The HTML &lt;header> element represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also other elements like a logo, a search form, an author name, and so on."><code>&lt;header&gt;</code></a></li>
+  <li class="html5"><s class="deprecatedElement obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/hgroup" title="The HTML &lt;hgroup> element represents a multi-level heading for a section of a document. It groups a set of &lt;h1>–&lt;h6> elements."><code>&lt;hgroup&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/hr" title="The HTML &lt;hr> element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic with a section."><code>&lt;hr&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/html" title="The HTML &lt;html> element represents the root (top-level element) of an HTML document, so it is also referred to as the root element. All other elements must be descendants of this element."><code>&lt;html&gt;</code></a></li>
+ </ol>
+ </li><li>I
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/i" title="The HTML &lt;i> element represents a range of text that is set off from the normal text for some reason. Some examples include technical terms, foreign language phrases, or fictional character thoughts. It is typically displayed in italic type."><code>&lt;i&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/iframe" title="The HTML Inline Frame element (&lt;iframe>) represents a nested browsing context, embedding another HTML page into the current one."><code>&lt;iframe&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/img" title="The HTML &lt;img> element embeds an image into the document. It is a replaced element."><code>&lt;img&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/input" title="The HTML &lt;input> element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent."><code>&lt;input&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/ins" title="The HTML &lt;ins> element represents a range of text that has been added to a document."><code>&lt;ins&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/isindex" title="&lt;isindex> is an obsolete HTML element that puts a text field in a page for querying the document."><code>&lt;isindex&gt;</code></a></s></li>
+ </ol>
+ </li><li>J K
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/kbd" title="The HTML Keyboard Input element (&lt;kbd>) represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device."><code>&lt;kbd&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/keygen" title="The HTML &lt;keygen> element exists to facilitate generation of key material, and submission of the public key as part of an HTML form. This mechanism is designed for use with Web-based certificate management systems. It is expected that the &lt;keygen> element will be used in an HTML form along with other information needed to construct a certificate request, and that the result of the process will be a signed certificate."><code>&lt;keygen&gt;</code></a></li>
+ </ol>
+ </li><li>L
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/label" title="The HTML &lt;label> element represents a caption for an item in a user interface."><code>&lt;label&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/legend" title="The HTML &lt;legend> element represents a caption for the content of its parent &lt;fieldset>."><code>&lt;legend&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/li" title="The HTML &lt;li> element is used to represent an item in a list. It must be contained in a parent element: an ordered list (&lt;ol>), an unordered list (&lt;ul>), or a menu (&lt;menu>). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter."><code>&lt;li&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/link" title='The HTML External Resource Link element (&lt;link>) specifies relationships between the current document and an external resource. This element is most commonly used to link to stylesheets, but is also used to establish site icons (both "favicon" style icons and mobile home screen/app icons) among other things.'><code>&lt;link&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/listing" title="The HTML Listing Element (&lt;listing>) renders text between the start and end tags without interpreting the HTML in between and using a monospaced font. The HTML 2 standard recommended that lines shouldn't be broken when not greater than 132 characters."><code>&lt;listing&gt;</code></a></s></li>
+ </ol>
+ </li><li>M
+ <ol>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/main" title="The HTML &lt;main> element represents the dominant content of the &lt;body> of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application."><code>&lt;main&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/map" title="The HTML &lt;map> element is used with &lt;area> elements to define an image map (a clickable link area)."><code>&lt;map&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/mark" title="The HTML Mark Text element (&lt;mark>) represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context."><code>&lt;mark&gt;</code></a></li>
+  <li><s class="nonStdElement"><a href="/en-US/docs/Web/HTML/Element/marquee" title="The HTML &lt;marquee> element is used to insert a scrolling area of text. You can control what happens when the text reaches the edges of its content area using its attributes."><code>&lt;marquee&gt;</code></a></s></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/menu" title="The HTML &lt;menu> element represents a group of commands that a user can perform or activate. This includes both list menus, which might appear across the top of a screen, as well as context menus, such as those that might appear underneath a button after it has been clicked."><code>&lt;menu&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/menuitem" title="The HTML &lt;menuitem> element represents a command that a user is able to invoke through a popup menu. This includes context menus, as well as menus that might be attached to a menu button."><code>&lt;menuitem&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/meta" title="The HTML &lt;meta> element represents metadata that cannot be represented by other HTML meta-related elements, like &lt;base>, &lt;link>, &lt;script>, &lt;style> or &lt;title>."><code>&lt;meta&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/meter" title="The HTML &lt;meter> element represents either a scalar value within a known range or a fractional value."><code>&lt;meter&gt;</code></a></li>
+ </ol>
+ </li><li>N
+ <ol>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/nav" title="The HTML &lt;nav> element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes."><code>&lt;nav&gt;</code></a></li>
+  <li><s class="nonStdElement"><a href="/en-US/docs/Web/HTML/Element/nobr" title="The non-standard, obsolete HTML &lt;nobr> element prevents the text it contains from automatically wrapping across multiple lines, potentially resulting in the user having to scroll horizontally to see the entire width of the text."><code>&lt;nobr&gt;</code></a></s></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/noframes" title="The obsolete HTML No Frames or frame fallback element, &lt;noframes>, provides content to be presented in browsers that don't support (or have disabled support for) the &lt;frame> element."><code>&lt;noframes&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/noscript" title="The HTML &lt;noscript> element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser."><code>&lt;noscript&gt;</code></a></li>
+ </ol>
+ </li><li>O
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/object" title="The HTML &lt;object> element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin."><code>&lt;object&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/ol" title="The HTML &lt;ol> element represents an ordered list of items, typically rendered as a numbered list."><code>&lt;ol&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/optgroup" title="The HTML &lt;optgroup> element creates a grouping of options within a &lt;select> element."><code>&lt;optgroup&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/option" title="The HTML &lt;option> element is used to define an item contained in a &lt;select>, an &lt;optgroup>, or a &lt;datalist> element. As such, &lt;option> can represent menu items in popups and other lists of items in an HTML document."><code>&lt;option&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/output" title="The HTML Output element (&lt;output>) is a container element into which a site or app can inject the results of a calculation or the outcome of a user action."><code>&lt;output&gt;</code></a></li>
+ </ol>
+ </li><li>P
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/p" title="The HTML &lt;p> element represents a paragraph."><code>&lt;p&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/param" title="The HTML &lt;param> element defines parameters for an &lt;object> element."><code>&lt;param&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/picture" title="The HTML &lt;picture> element contains zero or more &lt;source> elements and one &lt;img> element to provide versions of an image for different display/device scenarios."><code>&lt;picture&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/plaintext" title="The HTML Plaintext Element (&lt;plaintext>) renders everything following the start tag as raw text, ignoring any following HTML."><code>&lt;plaintext&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/pre" title="The HTML &lt;pre> element represents preformatted text which is to be presented exactly as written in the HTML file."><code>&lt;pre&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/progress" title="The HTML &lt;progress> element displays an indicator showing the completion progress of a task, typically displayed as a progress bar."><code>&lt;progress&gt;</code></a></li>
+ </ol>
+ </li><li>Q
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/q" title="The HTML &lt;q> element  indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. "><code>&lt;q&gt;</code></a></li>
+ </ol>
+ </li><li>R
+ <ol>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/rp" title="The HTML Ruby Fallback Parenthesis (&lt;rp>) element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the &lt;ruby> element."><code>&lt;rp&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/rt" title="The HTML Ruby Text (&lt;rt>) element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The &lt;rt> element must always be contained within a &lt;ruby> element."><code>&lt;rt&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/rtc" title="The HTML Ruby Text Container (&lt;rtc>) element embraces semantic annotations of characters presented in a ruby of &lt;rb> elements used inside of &lt;ruby> element. &lt;rb> elements can have both pronunciation (&lt;rt>) and semantic (&lt;rtc>) annotations."><code>&lt;rtc&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/ruby" title="The HTML &lt;ruby> element represents a ruby annotation. Ruby annotations are for showing pronunciation of East Asian characters."><code>&lt;ruby&gt;</code></a></li>
+ </ol>
+ </li><li>S
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/s" title="The HTML &lt;s> element renders text with a strikethrough, or a line through it. Use the &lt;s> element to represent things that are no longer relevant or no longer accurate. However, &lt;s> is not appropriate when indicating document edits; for that, use the &lt;del> and &lt;ins> elements, as appropriate."><code>&lt;s&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/samp" title="The HTML Sample Element (&lt;samp>) is used to enclose inline text which represents sample (or quoted) output from a computer program."><code>&lt;samp&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/script" title="The HTML &lt;script> element is used to embed or reference executable code; this is typically used to embed or refer to JavaScript code."><code>&lt;script&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/section" title="The HTML &lt;section> element represents a standalone section — which doesn't have a more specific semantic element to represent it — contained within an HTML document."><code>&lt;section&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/select" title="The HTML &lt;select> element represents a control that provides a menu of options"><code>&lt;select&gt;</code></a></li>
+  <li class="webcomp"><a href="/en-US/docs/Web/HTML/Element/shadow" title="The HTML &lt;shadow> element—an obsolete part of the Web Components technology suite—was intended to be used as a shadow DOM insertion point."><code>&lt;shadow&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/slot" title="The HTML &lt;slot> element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together."><code>&lt;slot&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/small" title="The HTML &lt;small> element makes the text font size one size smaller (for example, from large to medium, or from small to x-small) down to the browser's minimum font size.  In HTML5, this element is repurposed to represent side-comments and small print, including copyright and legal text, independent of its styled presentation."><code>&lt;small&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/source" title="The HTML &lt;source> element specifies multiple media resources for the &lt;picture>, the &lt;audio> element, or the &lt;video> element. It is an empty element. It is commonly used to serve the same media content in multiple formats supported by different browsers."><code>&lt;source&gt;</code></a></li>
+  <li><s class="nonStdElement"><a href="/en-US/docs/Web/HTML/Element/spacer" title="&lt;spacer> is an obsolete HTML element which allowed insertion of empty spaces on pages. It was devised by Netscape to accomplish the same effect as a single-pixel layout image, which was something web designers used to use to add white spaces to web pages without actually using an image. However, &lt;spacer> no longer supported by any major browser and the same effects can now be achieved using simple CSS. "><code>&lt;spacer&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/span" title="The HTML &lt;span> element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang."><code>&lt;span&gt;</code></a></li>
+  <li><s class="obsoleteElement deprecatedElement"><a href="/en-US/docs/Web/HTML/Element/strike" title="The HTML &lt;strike> element (or HTML Strikethrough Element) places a strikethrough (horizontal line) over text."><code>&lt;strike&gt;</code></a></s></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/strong" title="The HTML Strong Importance Element (&lt;strong>) indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type."><code>&lt;strong&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/style" title="The HTML &lt;style> element contains style information for a document, or part of a document."><code>&lt;style&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/sub" title="The HTML Subscript element (&lt;sub>) specifies inline text which should be displayed as subscript for solely typographical reasons."><code>&lt;sub&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/summary" title="The HTML Disclosure Summary element (&lt;summary>) element specifies a summary, caption, or legend for a &lt;details> element's disclosure box."><code>&lt;summary&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/sup" title="The HTML Superscript element (&lt;sup>) specifies inline text which is to be displayed as superscript for solely typographical reasons."><code>&lt;sup&gt;</code></a></li>
+ </ol>
+ </li><li>T
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/table" title="The HTML &lt;table> element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data."><code>&lt;table&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/tbody" title="The HTML Table Body element (&lt;tbody>) encapsulates a set of table row (&lt;tr> elements), indicating that they comprise the body of the table (&lt;table>)."><code>&lt;tbody&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/td" title="The HTML &lt;td> element defines a cell of a table that contains data. It participates in the table model."><code>&lt;td&gt;</code></a></li>
+  <li class="webcomp"><a href="/en-US/docs/Web/HTML/Element/template" title="The HTML Content Template (&lt;template>) element is a mechanism for holding client-side content that is not to be rendered when a page is loaded but may subsequently be instantiated during runtime using JavaScript."><code>&lt;template&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/textarea" title="The HTML &lt;textarea> element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form."><code>&lt;textarea&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/tfoot" title="The HTML &lt;tfoot> element defines a set of rows summarizing the columns of the table."><code>&lt;tfoot&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/th" title="The HTML &lt;th> element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes."><code>&lt;th&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/thead" title="The HTML &lt;thead> element defines a set of rows defining the head of the columns of the table."><code>&lt;thead&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/time" title="The HTML &lt;time> element represents a specific period in time."><code>&lt;time&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/title" title="The HTML Title element (&lt;title>) defines the document's title that is shown in a browser's title bar or a page's tab."><code>&lt;title&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/tr" title="The HTML &lt;tr> element defines a row of cells in a table. The row's cells can then be established using a mix of &lt;td> (data cell) and &lt;th> (header cell) elements.The HTML &lt;tr> element specifies that the markup contained inside the &lt;tr> block comprises one row of a table, inside which the &lt;th> and &lt;td> elements create header and data cells, respectively, within the row."><code>&lt;tr&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/track" title="The HTML &lt;track> element is used as a child of the media elements &lt;audio> and &lt;video>. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks or Timed Text Markup Language (TTML)."><code>&lt;track&gt;</code></a></li>
+  <li><s class="obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/tt" title="The obsolete HTML Teletype Text element (&lt;tt>) creates inline text which is presented using the user agent's default monospace font face."><code>&lt;tt&gt;</code></a></s></li>
+ </ol>
+ </li><li>U
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/u" title="The HTML Unarticulated Annotation Element (&lt;u>) represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation."><code>&lt;u&gt;</code></a></li>
+  <li><a href="/en-US/docs/Web/HTML/Element/ul" title="The HTML &lt;ul> element represents an unordered list of items, typically rendered as a bulleted list."><code>&lt;ul&gt;</code></a></li>
+ </ol>
+ </li><li>V
+ <ol>
+  <li><a href="/en-US/docs/Web/HTML/Element/var" title="The HTML Variable element (&lt;var>) represents the name of a variable in a mathematical expression or a programming context."><code>&lt;var&gt;</code></a></li>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/video" title="The HTML Video element (&lt;video>) embeds a media player which supports video playback into the document."><code>&lt;video&gt;</code></a></li>
+ </ol>
+ </li><li>W
+ <ol>
+  <li class="html5"><a href="/en-US/docs/Web/HTML/Element/wbr" title="The HTML &lt;wbr> element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location."><code>&lt;wbr&gt;</code></a></li>
+ </ol>
+ </li><li>X Y Z 
+ <ol>
+  <li><s class="obsoleteElement"><a href="/en-US/docs/Web/HTML/Element/xmp" title="The HTML Example Element (&lt;xmp>) renders text between the start and end tags without interpreting the HTML in between and using a monospaced font. The HTML2 specification recommended that it should be rendered wide enough to allow 80 characters per line."><code>&lt;xmp&gt;</code></a></s></li>
+ </ol>
+    </li>  
+   </ol>
+   </details></li>
+   </ol>
+  
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+    
+      <div class="newsletter-box">
+        <div class="newsletter">
+    <form id="newsletterForm" class="newsletter-form nodisable" name="newsletter-form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <div class="newsletter-head">
+            <h2 class="newsletter-teaser">Learn the best of web development</h2>
+            <p class="newsletter-description">Get the latest and greatest from MDN delivered straight to your inbox.</p>
+            
+        </div>
+
+        <div class="newsletter-fields">
+            <input type="hidden" id="fmt" name="fmt" value="H">
+            <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+            <div id="newsletterErrors" class="newsletter-errors"></div>
+
+            <div id="newsletterEmail" class="form-group newsletter-group-email">
+                <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+                <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+            </div>
+
+            <div id="newsletterPrivacy" class="form-group form-group-agree newsletter-group-privacy hidden">
+                <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+                <label for="newsletterPrivacyInput">
+                I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+                </label>
+            </div>
+            <div id="newsletterSubmit" class="newsletter-group-submit">
+                <button id="newsletter-submit" type="submit" class="button neutral newsletter-submit">
+                    Sign up now<svg class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg" width="23" height="28" viewBox="0 0 23 28" aria-hidden="true">
+    <path d="M23 15a2.01 2.01 0 0 1-.578 1.422L12.25 26.594c-.375.359-.891.578-1.422.578s-1.031-.219-1.406-.578L8.25 25.422c-.375-.375-.594-.891-.594-1.422s.219-1.047.594-1.422L12.828 18h-11C.703 18 0 17.062 0 16v-2c0-1.062.703-2 1.828-2h11L8.25 7.406a1.96 1.96 0 0 1 0-2.812l1.172-1.172c.375-.375.875-.594 1.406-.594s1.047.219 1.422.594l10.172 10.172c.375.359.578.875.578 1.406z"/>
+</svg>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden">
+        <span>Hide Newsletter Sign-up</span>
+        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true"><path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"/></svg>
+    </button>
+</div>
+      </div>
+    
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/HTML/Element/input/radio$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/HTML/Element/input/radio$history" label="View page history"></menuitem>
+  </menu>
+
+      </div>
+  </main>
+
+  <!-- Footer -->
+    <footer id="nav-footer" class="nav-footer">
+      <div class="center">
+          <a href="/en-US/" class="nav-footer-logo">MDN Web Docs</a>
+<div class="footer-group footer-group-mdn">
+  <h2 class="footer-title">MDN</h2>
+  <ul class="footer-list">
+    <li><a href="/en-US/docs/Web">Web Technologies</a></li>
+    <li><a href="/en-US/docs/Learn">Learn Web Development</a></li>
+    <li><a href="/docs/MDN/About">About MDN</a></li>
+    <li><a href="/en-US/docs/MDN/Feedback">Feedback</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozdevnet">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://github.com/mdn/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-github" width="24" height="28" viewBox="0 0 24 28" aria-label="GitHub" role="img" focusable="false">
+    <title>GitHub</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          <a href="https://mozilla.org" class="nav-footer-mozilla">Mozilla</a>
+<div class="footer-group footer-group-mozilla">
+  <h2 class="footer-title">Mozilla</h2>
+  <ul class="footer-list">
+    <li><a href="https://www.mozilla.org/about/">About</a></li>
+    <li><a href="https://www.mozilla.org/contact/">Contact Us</a></li>
+    <li><a href="https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral">Firefox</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozilla">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://www.facebook.com/mozilla">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-facebook" width="16" height="28" viewBox="0 0 16 28" aria-label="Facebook" role="img" focusable="false">
+    <title>Facebook</title>
+    <path d="M14.984.187v4.125h-2.453c-1.922 0-2.281.922-2.281 2.25v2.953h4.578l-.609 4.625H10.25v11.859H5.469V14.14H1.485V9.515h3.984V6.109C5.469 2.156 7.891 0 11.422 0c1.687 0 3.141.125 3.563.187z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://www.instagram.com/mozillagram/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-instagram" width="24" height="28" viewBox="0 0 24 28" aria-label="Instagram" role="img" focusable="false">
+    <title>Instagram</title>
+    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm2.156 0c0 3.406-2.75 6.156-6.156 6.156S5.844 17.406 5.844 14 8.594 7.844 12 7.844s6.156 2.75 6.156 6.156zm1.688-6.406c0 .797-.641 1.437-1.437 1.437S16.97 8.39 16.97 7.594s.641-1.437 1.437-1.437 1.437.641 1.437 1.437zM12 4.156c-1.75 0-5.5-.141-7.078.484-.547.219-.953.484-1.375.906s-.688.828-.906 1.375c-.625 1.578-.484 5.328-.484 7.078s-.141 5.5.484 7.078c.219.547.484.953.906 1.375s.828.688 1.375.906c1.578.625 5.328.484 7.078.484s5.5.141 7.078-.484c.547-.219.953-.484 1.375-.906s.688-.828.906-1.375c.625-1.578.484-5.328.484-7.078s.141-5.5-.484-7.078c-.219-.547-.484-.953-.906-1.375s-.828-.688-1.375-.906C17.5 4.015 13.75 4.156 12 4.156zM24 14c0 1.656.016 3.297-.078 4.953-.094 1.922-.531 3.625-1.937 5.031s-3.109 1.844-5.031 1.937c-1.656.094-3.297.078-4.953.078s-3.297.016-4.953-.078c-1.922-.094-3.625-.531-5.031-1.937S.173 20.875.08 18.953C-.014 17.297.002 15.656.002 14s-.016-3.297.078-4.953c.094-1.922.531-3.625 1.937-5.031s3.109-1.844 5.031-1.937c1.656-.094 3.297-.078 4.953-.078s3.297-.016 4.953.078c1.922.094 3.625.531 5.031 1.937s1.844 3.109 1.937 5.031C24.016 10.703 24 12.344 24 14z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" data-locale="en-US" value="/en-US/docs/Web/HTML/Element/input/radio" selected>
+          English (US) (en-US)
+        </option>
+        
+          <option title="French" data-locale="en-US" value="/fr/docs/Web/HTML/Element/Input/radio">
+            Français (fr)
+          </option>
+          <option title="Japanese" data-locale="en-US" value="/ja/docs/Web/HTML/Element/Input/radio">
+            日本語 (ja)
+          </option>
+          <option title="Russian" data-locale="en-US" value="/ru/docs/Web/HTML/Element/Input/radio">
+            Русский (ru)
+          </option>
+          <option title="Chinese (Simplified)" data-locale="en-US" value="/zh-CN/docs/Web/HTML/Element/Input/radio">
+            中文 (简体) (zh-CN)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+
+          
+            <ul class="footer-tos">
+              <li><a href="https://www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/">Privacy</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            </ul>
+
+            <div id="license" class="contentinfo">
+              <p>&copy; 2005-2019 Mozilla and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+            </div>
+          
+      </div>
+    </footer> 
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.mozilla.org/static/build/js/selectivizr.8bb9e662e963.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script src="https://developer.mozilla.org/static/jsi18n/en-US/javascript.414b87adc480.js"></script>
+    <script type="text/javascript" src="https://developer.mozilla.org/static/build/js/main.03d406ff5fc8.js" charset="utf-8"></script>
+    <script>
+    if (window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+  </script>
+    
+  
+
+    <script async type="text/javascript" src="https://developer.mozilla.org/static/build/js/wiki.2780b51fe209.js" charset="utf-8"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://developer.mozilla.org/static/build/js/newsletter.a85c5c2892e5.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>

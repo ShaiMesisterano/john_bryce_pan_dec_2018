@@ -1,8 +1,7 @@
-var rp = require('request-promise');
 var jsdom = require('jsdom');
 var { JSDOM } = jsdom;
 
-async function start(search){
+async function start(rp, search){
     var googleResult = await rp(`http://www.google.com/search?q=${search}`);
     var firstResult = getFirstResult(googleResult);
     var content = await rp(`http://www.google.com/${firstResult}`);

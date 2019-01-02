@@ -1,4 +1,5 @@
 const express = require('express');
+var rp = require('request-promise');
 const fsPromise = require('../modules/fs-promise');
 const firstResult = require('../modules/google-first-result');
 const router = express.Router();
@@ -14,7 +15,7 @@ router.get('/search', async function(request, response){
         result = await fsPromise.readFile(filename);
     }
     else {
-        result = await firstResult(filename);
+        result = await firstResult(rp, filename);
         await fsPromise.createFile(filename, result);
     }
     response.end(result);
