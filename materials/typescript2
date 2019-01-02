@@ -2,9 +2,9 @@ Typescript
 	background
 	// setup
 	sudo npm i typescript -g
-	create index.tsc
+	create index.ts
 		console.log("Works");
-		tsc index.tsc
+		tsc index.ts
 	sudo npm i ts-node -g
 	npm i --save-dev @types/body-parser @types/express @types/node @types/mongoose
 	create .tsconfig
