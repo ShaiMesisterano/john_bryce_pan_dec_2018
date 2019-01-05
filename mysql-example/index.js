@@ -1,14 +1,14 @@
-const mysql = require('promise-mysql');
+const mysql = require('mysql');
 
-(async function(){
-    const conn = await mysql.createConnection({
+(function(){
+    const conn = mysql.createConnection({
         host: 'localhost',
-        user: 'shai',
+        user: 'root',
         password: '12345678',
         database: 'recipes'
     });
 
-    const favorites = await conn.query("select * from favorites");
-
-    favorites.forEach( favorite => console.log(favorite) );
+    conn.query("select * from favorites", (err, favorites) => {
+        favorites.forEach(favorite => console.log(favorites));
+    });
 })();
