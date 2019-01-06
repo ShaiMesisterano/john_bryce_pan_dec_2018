@@ -7,3 +7,4 @@ class Person {
 
 let person: Person = new Person();
 person.walk();
+console.log(person.age);

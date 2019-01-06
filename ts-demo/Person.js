@@ -9,3 +9,4 @@ var Person = /** @class */ (function () {
 }());
 var person = new Person();
 person.walk();
+console.log(person.age);

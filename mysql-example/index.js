@@ -1,6 +1,10 @@
 const express = require('express');
-const indexRouter = require('./routers/indexRouter')
+const bodyParser = require('body-parser');
+
+const indexRouter = require('./routers/indexRouter');
 const app = express();
+
+app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 
