@@ -1,18 +1,15 @@
-const mysql = require('mysql');
+jest.unmock('mysql');
+const mysql = require.requireActual('mysql');
+
+const mockData = require('../__mocks__/mockData.json');
+
 const MySQLPromise = require('../mysql-promise');
 
-test('"read" should execute a select query with correct parameters', async function () {
+describe('MySQLPromise mock tests', async function () {
     const mySQLPromise = new MySQLPromise(mysql, 'localhost', 'root', '12345678', 'recipes');
-    
-    const spyQuery = jest.spyOn(mySQLPromise.conn, 'query');
 
-    const data = await mySQLPromise.read('favorites');
-
-    // console.log("mySQLPromise.conn", mySQLPromise.conn);
-
-    expect(42).toBe(42)
-    // expect(spyQuery).toBeCalled();
-    // const expectedQuery = "select * from favorites";
-
-    // expect(spyQuery).toHaveReturnedWith(expectedQuery);
+    test('"read" should return all recipes', async function () {
+        const data = await mySQLPromise.read('favorites');
+        expect(JSON.stringify(data)).toBe(JSON.stringify(mockData));
+    });
 });

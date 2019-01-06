@@ -8,22 +8,18 @@ class MySQLConnection {
         });
     }
     read(tableName) {
-        console.log("1");
         return new Promise((resolve, reject) => {
-            console.log("2");
-            this.conn.query(`select * from ${tableName}`, (err, rows) => {
-                console.log("rows",rows);
+            this.conn.query(`select * from ${tableName}`, function getRows(err, rows) {
                 if (err) {
                     console.log("ERROR", err);
                     reject(err);
                 };
 
-                resolve(rows)
+                resolve(rows);
             });
         });
     }
     create(tableName, fields) {
-        console.log(fields);
         const { name, ingredients, bakeTime } = fields;
         return new Promise((resolve, reject) => {
             this.conn.query(`insert into ${tableName} (name, ingredients, bakeTime) values('${name}','${ingredients}', '${bakeTime}')`, (err, rows) => {

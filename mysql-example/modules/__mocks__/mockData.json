@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "cake",
+        "ingredients": "sugar, milk",
+        "bakeTime": "15"
+    },
+    {
+        "id": 2,
+        "name": "pasta",
+        "ingredients": "pasta, tomato sauce",
+        "bakeTime": "25"
+    },
+    {
+        "id": 3,
+        "name": "pizza",
+        "ingredients": "cheese,tomato,flour",
+        "bakeTime": "30"
+    },
+    {
+        "id": 4,
+        "name": "ice cream",
+        "ingredients": "milk,chocolate",
+        "bakeTime": "10"
+    }
+]
