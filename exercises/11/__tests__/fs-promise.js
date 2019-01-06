@@ -1,4 +1,4 @@
-const fsPromise = require('./index');
+const fsPromise = require('../modules/fs-promise');
 
 // Spy
 // test('fs write file is executed', async function(){

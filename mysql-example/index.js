@@ -1,14 +1,7 @@
-const mysql = require('mysql');
+const express = require('express');
+const indexRouter = require('./routers/indexRouter')
+const app = express();
 
-(function(){
-    const conn = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '12345678',
-        database: 'recipes'
-    });
+app.use('/', indexRouter);
 
-    conn.query("select * from favorites", (err, favorites) => {
-        favorites.forEach(favorite => console.log(favorites));
-    });
-})();
+app.listen(3000, () => console.log('Server is running on 3000'));

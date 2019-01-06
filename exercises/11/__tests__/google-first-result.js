@@ -1,4 +1,3 @@
-jest.mock('jsdom');
 const start = require('./index');
 
 let html = "<html><body><div id='ires'><a href='http://abc.com'>Link</a></div></body></html>";

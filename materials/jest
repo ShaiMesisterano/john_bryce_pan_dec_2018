@@ -24,3 +24,22 @@ Jest
   		fs-promise.test.js
   	mock
   		fs-promise3.test.js
+	config
+		".test.js" match
+		__tests__
+		specific folder
+			jest fs-promise-tests/
+		specific suite
+			jest -t suite1 fs-promise-tests/
+			jest -t suite2 fs-promise-tests/
+		mocks
+			fs-promise
+				11/fs-promise-tests/fs-promise.test.js
+			jsdom module
+				11/google-first-result-tests/jsdom.test.js
+		watch
+			"scripts": {
+    			"test": "jest --watchAll"
+			}
+		express
+			mongo-example/__tests__/index.js
