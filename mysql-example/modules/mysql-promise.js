@@ -8,9 +8,15 @@ class MySQLConnection {
         });
     }
     read(tableName) {
+        console.log("1");
         return new Promise((resolve, reject) => {
+            console.log("2");
             this.conn.query(`select * from ${tableName}`, (err, rows) => {
-                if (err) reject(err);
+                console.log("rows",rows);
+                if (err) {
+                    console.log("ERROR", err);
+                    reject(err);
+                };
 
                 resolve(rows)
             });

@@ -4,9 +4,7 @@ jest.genMockFromModule('mysql');
 mysql.createConnection = () => { 
     return {
         query: (str, func) => {
-            const result = func(str);
-            console.log("RESULT", str);
-            return func(str);
+            return func(null, "OK");
         }
     };
  };
